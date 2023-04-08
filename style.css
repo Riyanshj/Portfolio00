@@ -221,7 +221,7 @@ nav #menu li a:hover {
 }
 
 #resize #menu li a {
-      color: #000000;
+      color: #afafaf;
 }
 
 #resize #menu li a:hover {
@@ -243,11 +243,16 @@ nav #menu li a:hover {
 
       nav #brand {
             margin-left: 24px;
+            font-size: 10px;
+            top: 0%;
+            position:fixed;
       }
 
       #menu a {
             font-size: 20px;
             font-weight: 300;
+            top: 0%;
+            padding: right 5%;
       }
 
       #resize li span {
