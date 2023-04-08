@@ -11,8 +11,8 @@ html, body {
       width: 100%;
       height: 100%;
       font-family: "Roboto Mono" !important;
-      background: rgb(190, 190, 190) !important;
-      color: rgb(41, 41, 41) !important;
+      background: rgb(195, 195, 195) !important;
+      color: rgb(57, 57, 57) !important;
       cursor: url('images/cursor.svg'),auto;
 }
 
@@ -243,7 +243,7 @@ nav #menu li a:hover {
 
       nav #brand {
             margin-left: 24px;
-            font-size: 5px;
+            font-size: 10px;
             top: 0%;
             position:fixed;
       }
@@ -257,12 +257,11 @@ nav #menu li a:hover {
 
       #resize li span {
             font-weight: bolder;
-            top: 0%;
       }
 
       nav #menu {
             display: none;
-            top: 0%;
+            top:0%;
       }
 }
 
@@ -444,7 +443,7 @@ h6 {
 }
 
 .hr {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgb(0, 0, 0);
       height: 1px;
 }
 
@@ -458,13 +457,13 @@ h6 {
 
 
 .info p {
-      color: grey;
+      color: rgb(0, 0, 0);
       font-weight: lighter;
 }
 
 .info li {
       font-weight: lighter;
-      color: #ffffff;
+      color: #000000;
       font-size: 18px;
       padding-left: 20px;
 }
@@ -477,6 +476,7 @@ h6 {
       width: 4px;
       margin-right: 6px;
       background: #3b5998;
+      color: #000000;
 }
 
 
@@ -488,6 +488,7 @@ h6 {
       width: 4px;
       margin-right: 6px;
       background: #fcaf45;
+      color: #000000;
 }
 
 
@@ -499,6 +500,7 @@ h6 {
       width: 4px;
       margin-right: 6px;
       background: #55acee;
+      color: #000000;
 }
 
 
@@ -510,18 +512,22 @@ h6 {
       width: 4px;
       margin-right: 6px;
       background: #c4302b;
+      color: #000000;
 }
 
 #media, #address {
       text-align: right;
+      color: #000000;
 }
 
 #media ul {
       list-style: none;
+      color: #000000;
 }
 
 #media ul li {
       display: inline-block;
+      color: #000000;
 }
 
 @media(max-width: 768px) {
@@ -544,7 +550,7 @@ h6 {
 .hero-content p {
       font-weight: 300;
       line-height: 36px;
-      color: grey;
+      color: rgb(59, 56, 56);
 }
 
 .hero-content h6 {
@@ -567,7 +573,8 @@ h6 {
 }
 
 .image {
-      background: url(https://images.unsplash.com/photo-1540885762261-a2ca01f290f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80) no-repeat 50% 70%;
+      background: url(images/profile.jpeg) no-repeat 48.5% 45%;
+      
 }
 
 /*--------------- contact form --------------- */
@@ -703,3 +710,39 @@ span {
             display: inline-block;
       }
 }
+
+/* Preloader styles */
+.preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #f4f4f4;
+      z-index: 9999;
+    }
+    
+    .preloader-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+      font-weight: bold;
+      text-shadow: 2px 2px 2px #ddd;
+    }
+    
+    .preloader-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 10px;
+      background-color: #333;
+    }
+    
+    /* Content styles */
+    .content {
+      display: none;
+    }
+    

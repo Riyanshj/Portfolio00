@@ -17,7 +17,7 @@
 
       <!-- google fonts -->
       <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
       <!-- terminal effect -->
       <script src="t.min.js"></script>
 
@@ -29,6 +29,14 @@
 
 
 </head>
+
+<div class="preloader">
+      <div class="preloader-text">RIYANSH JAIN</div>
+      <div class="preloader-bar"></div>
+    </div>
+ 
+
+
 <div class="q">
 
 
@@ -165,9 +173,9 @@
                                           <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
 
                                           <ul>
-                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: azure;">Li</a></li>
-                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: azure;">IG</a></li>
-                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: azure;">Be</a></li>
+                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: rgb(57, 57, 57) ;">Li</a></li>
+                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: rgb(57, 57, 57) ;">IG</a></li>
+                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: rgb(57, 57, 57) ;">Be</a></li>
                                           </ul>
 
                                           <br><br>
@@ -189,6 +197,9 @@
       </div>
       <div class="cursor"></div> 
 </div>
+
+
+
       <!-- greensock cdn -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
@@ -303,5 +314,30 @@
             })();
             
             </script>
+            <script>
+                  // Wait for page to fully load
+window.addEventListener("load", function() {
+  // Hide the preloader
+  document.querySelector(".preloader").style.display = "none";
+  // Show the content
+  document.querySelector(".content").style.display = "block";
+});
+
+// Animate the preloader bar
+var preloaderBar = document.querySelector(".preloader-bar");
+var width = 0;
+var id = setInterval(frame, 10);
+
+function frame() {
+  if (width >= 100) {
+    clearInterval(id);
+  } else {
+    width++;
+    preloaderBar.style.width = width + "%";
+  }
+}
+
+            </script>
+
 </body>
 </html>
