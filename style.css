@@ -11,9 +11,11 @@ html, body {
       width: 100%;
       height: 100%;
       font-family: "Roboto Mono" !important;
-      background: rgb(0, 0, 0) !important;
-      color: rgb(255, 255, 255) !important;
+      background: rgb(190, 190, 190) !important;
+      color: rgb(41, 41, 41) !important;
+      cursor: url('images/cursor.svg'),auto;
 }
+
 
 .whitespace {
       width: 100%;
@@ -94,11 +96,13 @@ html, body {
 /*--------------- navigation --------------- */
 nav {
       width: 100%;
-      background: #000000;
+      background: #00000000;
       height: 80px;
       position: fixed;
       z-index: 1;
       display: inline-flexbox;
+      mix-blend-mode: difference;
+      
       
 }
 
@@ -108,11 +112,16 @@ nav #brand {
       margin-left: 82px;
       line-height: 80px;
       font-weight: bold;
+      top: 0%;
 }
 
 nav #brand a {
       color: #ffffff;
       transition: all 0.3s ease-out;
+      mix-blend-mode: difference;
+      top: 0%;
+      
+
 }
 
 nav #brand a:hover {
@@ -123,6 +132,7 @@ nav #menu {
       float: left;
       right: 80px;
       position: fixed;
+      top: 0%;
 }
 
 nav #menu li {
@@ -133,6 +143,7 @@ nav #menu li {
       line-height: 80px;
       position: relative;
       transition: all 0.3s ease-out;
+      mix-blend-mode: difference;
 }
 
 nav #menu li span {
@@ -176,7 +187,7 @@ nav #menu li a:hover {
       z-index: 1;
       top: 0px;
       position: fixed;
-      background: #ffffff;
+      background: #000000;
       width: 100%;
       height: 100%;
       visibility: hidden;
@@ -210,7 +221,7 @@ nav #menu li a:hover {
 }
 
 #resize #menu li a {
-      color: #ffffff;
+      color: #000000;
 }
 
 #resize #menu li a:hover {
@@ -433,7 +444,11 @@ h6 {
 .info h4 {
       font-size: 18px;
       font-weight: lighter;
+
 }
+
+
+
 
 .info p {
       color: grey;
@@ -581,7 +596,7 @@ h6 {
       border: none;
       resize: vertical;
       background: transparent;
-      color: #000000;
+      color: #ffffff;
       font-weight: bolder;
 }
 
@@ -596,7 +611,7 @@ textarea:focus {
 }
 
 .textarea {
-      border-bottom: 1px solid #000000;
+      border-bottom: 1px solid #ffffff;
 }
 
 .send {
@@ -604,7 +619,7 @@ textarea:focus {
       text-transform: uppercase;
       padding: 20px 30px;
       background: transparent;
-      color: #000000;
+      color: #ffffff;
       font-size: 14px;
       letter-spacing: 2px;
 }
@@ -622,6 +637,7 @@ textarea:focus {
 }
 
 /*--------------- project page --------------- */
+
 
 .prev, .next p {
       color: grey;
@@ -652,7 +668,7 @@ span {
 .cursor {
       pointer-events: none;
       position: fixed;
-      padding: 1rem;
+      padding: 1.75rem;
       background-color: #fff;
       border-radius: 50%;
       mix-blend-mode: difference;
@@ -662,22 +678,6 @@ span {
 .hover-this:hover ~ .cursor {
       transform: translate(-50%, -50%) scale(20);
 }
-
-
-.cursor1 {
-      pointer-events: none;
-      position: fixed;
-      padding: 1rem;
-      background-color: #fff;
-      border-radius: 50%;
-      mix-blend-mode: difference;
-      transition: transform 0.3s ease;
-}
-
-.hover-this:hover ~ .cursor1 {
-      transform: translate(-50%, -50%) scale(20);
-}
-
 @media(min-width: 900px) {
       nav {
             display: flex;

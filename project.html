@@ -33,7 +33,7 @@
             <!--------------- navbar starts here --------------->
             <nav>
                   <span id="brand">
-                        <a href="index.html">harrnish</a>
+                        <a href="index.html">RIYANSH</a>
                   </span>
 
                   <ul id="menu">
@@ -164,7 +164,7 @@
                               <div class="row">
                                     <div class="col-lg-4" id="personal">
                                           <p class="wow fadeInUp">connect with me</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @harrnish</h4>
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @jriyansh09</h4>
                                           <br><br>
                                     </div>
 
@@ -172,18 +172,18 @@
                                           <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
 
                                           <ul>
-                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s">fb</li>
-                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s">ig</li>
-                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s">tw</li>
-                                                <li id="yt" class="wow fadeInUp" data-wow-delay="1s">yt</li>
-                                          </ul>
+                                               
+                                          </ul> 
+                                          <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: azure;">Li</a></li>
+                                          <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: azure;">IG</a></li>
+                                          <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: azure;">Be</a></li>
 
                                           <br><br>
                                     </div>
 
                                     <div class="col-lg-4" id="address">
                                           <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">harrnish@gmail.com</h4>
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">riyanshj83@gmail.com</h4>
                                           <br><br>
                                     </div>
                               </div>
@@ -194,7 +194,7 @@
             <!--------------- footer ends here --------------->
 
             <br><br><br><br>
-
+            <div class="cursor"></div> 
       </div>
 
       <!-- greensock cdn -->
@@ -244,5 +244,39 @@
 
 
       </script>
+      <script>
+
+            (function () {
+            
+                  const link = document.querySelectorAll('nav > .hover-this');
+                  const cursor = document.querySelector('.cursor');
+            
+                  const animateit = function (e) {
+                        const span = this.querySelector('span');
+                        const { offsetX: x, offsetY: y } = e,
+                        { offsetWidth: width, offsetHeight: height } = this,
+            
+                        move = 25,
+                        xMove = x / width * (move * 2) - move,
+                        yMove = y / height * (move * 2) - move;
+            
+                        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            
+                        if (e.type === 'mouseleave') span.style.transform = '';
+                  };
+            
+                  const editCursor = e => {
+                        const { clientX: x, clientY: y } = e;
+                        cursor.style.left = x + 'px';
+                        cursor.style.top = y + 'px';
+                  };
+            
+                  link.forEach(b => b.addEventListener('mousemove', animateit));
+                  link.forEach(b => b.addEventListener('mouseleave', animateit));
+                  window.addEventListener('mousemove', editCursor);
+            
+            })();
+            
+            </script>
 </body>
 </html>
