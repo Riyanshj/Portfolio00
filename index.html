@@ -29,16 +29,6 @@
 
 
 </head>
-
-<div class="preloader">
-      <div class="preloader-text">
-        <span class="percentage">0</span><span>%</span>
-      </div>
-      <div class="preloader-bar"></div>
-    </div>
- 
-
-
 <div class="q">
 
 
@@ -315,62 +305,8 @@
             
             })();
             
-            </script>
-            <script>
-// Wait for page to fully load
-window.addEventListener("load", function() {
-  // Set the initial value for the percentage text
-  var percentageText = document.querySelector(".percentage");
-  percentageText.textContent = "0";
-
-  // Animate the percentage text from 1 to 100
-  var animationDuration = 3000; // 3 seconds
-  var animationStart = null;
-  var animationStep = function(timestamp) {
-    if (!animationStart) {
-      animationStart = timestamp;
-    }
-    var progress = timestamp - animationStart;
-    var percentage = Math.min(Math.floor(progress / (animationDuration / 100)), 100);
-    percentageText.textContent = percentage;
-    if (progress < animationDuration) {
-      window.requestAnimationFrame(animationStep);
-    }
-  };
-  window.requestAnimationFrame(animationStep);
-
-  // Animate the preloader bar
-  var preloaderBar = document.querySelector(".preloader-bar");
-  var preloaderBarWidth = 0;
-  var preloaderBarAnimation = setInterval(function() {
-    preloaderBarWidth += 1;
-    preloaderBar.style.width = preloaderBarWidth + "%";
-    if (preloaderBarWidth >= 100) {
-      clearInterval(preloaderBarAnimation);
-    }
-  }, 30);
-
-  // Animate the preloader circle
-  var preloaderCircle = document.querySelector(".preloader-circle");
-  var preloaderCircleAnimation = setInterval(function() {
-    preloaderCircle.classList.toggle("pulse");
-  }, 1000);
-});
-
-// Hide the preloader when the page is fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector(".preloader").style.display = "none";
-  document.querySelector(".content").style.display = "block";
-});
-
-// Show the preloader when the page is refreshed
-window.addEventListener("beforeunload", function() {
-  document.querySelector(".preloader").style.display = "block";
-  document.querySelector(".content").style.display = "none";
-});
-
-
-            </script>
+      </script>
+     
 
 </body>
 </html>
