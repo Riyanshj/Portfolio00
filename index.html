@@ -315,12 +315,15 @@
             
             </script>
             <script>
-                  // Wait for page to fully load
+// Wait for page to fully load
 window.addEventListener("load", function() {
-  // Hide the preloader
-  document.querySelector(".preloader").style.display = "none";
-  // Show the content
-  document.querySelector(".content").style.display = "block";
+  // Add a minimum delay of 5 seconds before hiding the preloader
+  setTimeout(function() {
+    // Hide the preloader
+    document.querySelector(".preloader").style.display = "none";
+    // Show the content
+    document.querySelector(".content").style.display = "block";
+  }, 5000);
 });
 
 // Animate the preloader bar
@@ -336,6 +339,7 @@ function frame() {
     preloaderBar.style.width = width + "%";
   }
 }
+
 
             </script>
 
