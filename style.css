@@ -160,15 +160,15 @@ nav #menu li a:hover {
 
 #toggle {
       position: absolute;
-      right: 30px;
-      top: 20px;
+      right: 40px;
+      top: 0px;
       font-weight: 300;
       z-index: 2;
       width: 30px;
-      height: 30px;
+      
       cursor: cursor;
       float: right;
-      transition: all 0.3s ease-out;
+      
       visibility: hidden;
       opacity: 0;
 }
@@ -203,6 +203,8 @@ nav #menu li a:hover {
       text-align: center;
       display: table-cell;
       vertical-align: center;
+      top: 0%;
+      
 }
 
 #resize #menu li {
@@ -237,8 +239,8 @@ nav #menu li a:hover {
       #toggle {
             visibility: visible;
             opacity: 1;
-            margin-top: 6px;
-            margin-right: 4px;
+            top: 0%;
+            
       }
 
       nav #brand {
@@ -346,12 +348,12 @@ h6 {
 }
 
 .project1 {
-      background: url(https://images.unsplash.com/photo-1540349220179-09d3866f2e74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2600&q=80) no-repeat 50% 50%;
+      background: url(images/SOCIAL\ MEDIA\ APP.png) no-repeat 50% 50%;
       background-size: cover;
 }
 
 .project1::after {
-      content: "timeless flow.";
+      content: "Social Media UI.";
       font-family: "Roboto Mono";
       font-size: 36px;
       position: relative;
@@ -364,12 +366,12 @@ h6 {
 }
 
 .project2 {
-      background: url(https://images.unsplash.com/photo-1468870045442-e7d799d8c98a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2448&q=80) no-repeat 50% 50%;
+      background: url(images/game.png) no-repeat 50% 50%;
       background-size: cover;
 }
 
 .project2::after {
-      content: "foretime.";
+      content: "Stack Game.";
       font-family: "Roboto Mono";
       font-size: 36px;
       position: relative;
@@ -718,7 +720,7 @@ span {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #f4f4f4;
+      background-color: #000000;
       z-index: 9999;
     }
     
@@ -729,7 +731,20 @@ span {
       transform: translate(-50%, -50%);
       font-size: 60px;
       font-weight: bold;
-      text-shadow: 2px 2px 2px #ddd;
+      text-shadow: 2px 2px 2px #000000;
+    }
+    
+    .preloader-text .percentage {
+      animation: count 3s ease-in-out forwards;
+    }
+    
+    @keyframes count {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
     }
     
     .preloader-bar {
@@ -744,5 +759,18 @@ span {
     /* Content styles */
     .content {
       display: none;
+    }
+    
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .preloader-text {
+        font-size: 40px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .preloader-text {
+        font-size: 30px;
+      }
     }
     
