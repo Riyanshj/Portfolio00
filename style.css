@@ -8,7 +8,7 @@
 html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
+      width:100ch
       height: 100%;
       font-family: "Roboto Mono" !important;
       background: rgb(195, 195, 195) !important;
@@ -102,7 +102,7 @@ nav {
       z-index: 1;
       display: inline-flexbox;
       mix-blend-mode: difference;
-      
+      top: 0%;
       
 }
 
@@ -129,10 +129,9 @@ nav #brand a:hover {
 }
 
 nav #menu {
-      float: left;
-      right: 80px;
+      left: 100px;
       position: fixed;
-      top: 0%;
+      top: 10px;
 }
 
 nav #menu li {
@@ -165,7 +164,7 @@ nav #menu li a:hover {
       font-weight: 300;
       z-index: 2;
       width: 30px;
-      
+      height: 20px;
       cursor: cursor;
       float: right;
       
@@ -196,26 +195,27 @@ nav #menu li a:hover {
 }
 
 #resize #menu {
-      height: 90px;
+      
       position: absolute;
       left: 45%;
-      transform: translateX(-40%);
+      
       text-align: center;
-      display: table-cell;
+      
       vertical-align: center;
       top: 0%;
+      height: 10px;
       
 }
 
 #resize #menu li {
-      display: block;
+     
       text-align: center;
       padding: 10px 0;
       font-size: 50px;
       min-height: 50px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease-out;
+    
 }
 
 #resize li:nth-child(1) {
@@ -240,7 +240,7 @@ nav #menu li a:hover {
             visibility: visible;
             opacity: 1;
             top: 0%;
-            
+            height: 20px;
       }
 
       nav #brand {
@@ -259,6 +259,7 @@ nav #menu li a:hover {
 
       #resize li span {
             font-weight: bolder;
+            top: 0%;
       }
 
       nav #menu {
