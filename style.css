@@ -10,7 +10,7 @@ html, body {
       padding: 0;
       width:100%;
       height: 100%;
-      font-family: "Roboto Mono" !important;
+      font-family: "Clash Display" !important;
       background: rgb(195, 195, 195) !important;
       color: rgb(57, 57, 57) !important;
       cursor: url('images/cursor.svg'),auto;
@@ -116,12 +116,13 @@ nav #brand {
 }
 
 nav #brand a {
+      font-family: "Clash Display";
       color: #ffffff;
       transition: all 0.3s ease-out;
       mix-blend-mode: difference;
-      top: 2%;
-      
-
+      top: 5%;
+      font-weight: 500;
+     
 }
 
 nav #brand a:hover {
@@ -358,10 +359,10 @@ h6 {
 
 .project1::after {
       content: "Social Media UI.";
-      font-family: "Roboto Mono";
+      font-family: "Clash Display";
       font-size: 36px;
       position: relative;
-      color: #ffffff;
+      color: #7a7a7a;
       display: block;
       top: 8%;
       left: -60%;
@@ -376,10 +377,10 @@ h6 {
 
 .project2::after {
       content: "Stack Game.";
-      font-family: "Roboto Mono";
+      font-family: "Clash Display";
       font-size: 36px;
       position: relative;
-      color: #ffffff;
+      color: #7a7a7a;
       display: block;
       top: 80%;
       left: 90%;
@@ -394,10 +395,10 @@ h6 {
 
 .project3::after {
       content: "Netflix Redesigned.";
-      font-family: "Roboto Mono";
+      font-family: "Clash Display";
       font-size: 36px;
       position: relative;
-      color: #ffffff;
+      color: #7a7a7a;
       display: block;
       top: 80%;
       left: -50%;
@@ -406,16 +407,16 @@ h6 {
 }
 
 .project4 {
-      background: url(https://images.unsplash.com/photo-1435685813800-51ba4ceb9c4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1785&q=80) no-repeat 50% 50%;
+      background: url(images/3d\ website.png) no-repeat 50% 50%;
       background-size: cover;
 }
 
 .project4::after {
-      content: "departure.";
-      font-family: "Roboto Mono";
+      content: "3D Music Website.";
+      font-family: "Clash Display";
       font-size: 36px;
       position: relative;
-      color: #ffffff;
+      color: #7a7a7a;
       display: block;
       top: 10%;
       left: 90%;
@@ -725,7 +726,7 @@ span {
       padding-top: 1.2em;
 }
 .abc {
-      font-family: Georgia, 'Times New Roman', Times, serif ;
+      font-family: "Clash Display" ;
       font-weight: 700;
       color:#ff4c00;      
       font-size: 8em;
@@ -742,3 +743,4 @@ span {
             transform: translate(0,0);
       }
 }
+
