@@ -715,4 +715,28 @@ span {
             display: inline-block;
       }
 }
-
+.abc{
+      width: 100%;
+      margin:  0 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-top: 1.2em;
+}
+.abc {
+      font-family: Georgia, 'Times New Roman', Times, serif ;
+      font-weight: 700;
+      color:#ff4c00;      
+      font-size: 8em;
+      text-transform: uppercase;
+      display:inline-block ;
+      
+      animation: marquee-animation 80s linear infinite;
+}
+@keyframes abc-animation{
+      0%{
+            transform: translate(0,0);
+      }
+      100%{
+            transform: translate(0,0);
+      }
+}
