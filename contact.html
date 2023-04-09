@@ -21,7 +21,8 @@
       <!-- for on scroll animations -->
       <link rel="stylesheet" href="animate.css">
       <script src="wow.min.js"></script>
-      <script stc="https://smtpjs.com/v3/smtp.js"></script>
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
 
 </head>
 <body>
@@ -30,13 +31,12 @@
             CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US /
       </marquee>
       </div>
-      </div>
       <div class="wrapper">
 
             <!--------------- navbar starts here --------------->
             <nav>
                   <span id="brand">
-                        <a href="index.html">RIYANSH</a>
+                        <a href="index.html">RIYANSH JAIN</a>
                   </span>
 
                   <ul id="menu">
@@ -90,8 +90,7 @@
             <div class="container-fluid">
                   <div class="row">
                         <div class="col-lg-8">
-            
-                  <form name="contact-form" id="contact-form" method="post" action="" onsubmit="sendEmail(); reset(); return false;">
+                              <form name="contact-form" id="contact-form" method="post" action="contact.php" onsubmit="sendEmail" >
 
                               <ul>
 
@@ -158,7 +157,7 @@
                                           <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @jriyansh09</h4>
                                           <br><br>
                                     </div>
-
+                                    
                                     <div class="col-lg-4" id="media">
                                           <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
 
@@ -265,25 +264,57 @@
             
             })();
             
-      </script>
-      <script>
-            function sendEmail(){
-                  Email.send({
-                  Host : "smtp.elasticemail.com",
-                  Username : "riyanshj83@gmail.com",
-                  Password : "349BCD4CA3C6B4B2C8FA3FBFCCC21DC179CE",
-                  To : 'riyanshj83@gmail.com',
-                  From : document.getElementById("contact-email").value,
-                  Subject : "This is the subject",
-                  Body : "And this is the body"
-                  }).then(
-                  message => alert(message)
-                  );     
-            }
-      </script>
+            </script>
 
-
-
-
+<script>
+      // Get the contact form element
+      const contactForm = document.getElementById("contact-form");
+    
+      // Add an event listener to the form
+      contactForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+    
+        // Get the form data
+        const formData = new FormData(contactForm);
+    
+        // Send the form data to the server
+        fetch(contactForm.action, {
+          method: contactForm.method,
+          body: formData
+        })
+        .then(function(response) {
+          if (response.ok) {
+            alert("Thanks for your message! We'll get back to you soon.");
+            contactForm.reset();
+          } else {
+            alert("Sorry, there was an error sending your message. Please try again.");
+          }
+        })
+        .catch(function(error) {
+          alert("Sorry, there was an error sending your message. Please try again.");
+          console.error(error);
+        });
+      });
+    </script>
+ <script>
+      function sendEmail(){
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "riyanshj83@gmail.com",
+    Password : "349BCD4CA3C6B4B2C8FA3FBFCCC21DC179CE",
+    To : 'riyanshj83@gmail.com',
+    From : document.getElementById("contact-email").value,
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+      }
+ </script>  
+    
+    
+    
+    
+    
 </body>
 </html>
