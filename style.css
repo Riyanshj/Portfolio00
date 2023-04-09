@@ -242,7 +242,7 @@ nav #menu li a:hover {
             top: 7%;
             height: 20px;
             position:fixed;
-            animation-play-state: paused;
+            animation:none;
       }
 
       nav #brand {
