@@ -172,7 +172,9 @@ nav #menu li a:hover {
       visibility: hidden;
       opacity: 0;
 }
-
+.toggle{
+      padding: auto;
+}
 .close-btn {
       position: absolute;
       right: 16px;
@@ -257,6 +259,7 @@ nav #menu li a:hover {
             font-size: 20px;
             font-weight: 300;
             top: 0%;
+            right: 30%;
             
       }
 
@@ -269,7 +272,7 @@ nav #menu li a:hover {
       nav #menu {
             display: none;
             top:0%;
-            right: 40%;
+            right: 70%;
       }
 }
 
@@ -658,9 +661,18 @@ h6 {
       visibility: visible;
       transform: translate(calc(-200% + var(--x)), calc(-400% + var(--y))) scale(1);
        cursor: none;
+    }
             /* Media queries */
+
+
+
+
+
+
+
     @media only screen and (max-width: 600px) {
       .hover-text {
+            font-family: Clash Display;
         font-size: 40px;
         margin-left: 10px;
       }
@@ -719,7 +731,7 @@ h6 {
         transform: translate(calc(-30% + var(--x)), calc(-200% + var(--y))) scale(1);
       }
     }
-    }
+    
 /*--------------- project page --------------- */
 
 
