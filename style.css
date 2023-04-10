@@ -244,8 +244,12 @@ nav #menu li a:hover {
             opacity: 1;
             top: 7%;
             height: 20px;
-            position:fixed;
+            position:static;
+            
            
+      }
+      .toggle{
+            padding-right: 5%;
       }
 
       nav #brand {
@@ -259,8 +263,11 @@ nav #menu li a:hover {
             font-size: 20px;
             font-weight: 300;
             top: 0%;
-            right: 30%;
+            right: 50%;
             
+      }
+      .menu{
+            right: 50%;
       }
 
       #resize li span {
@@ -671,7 +678,7 @@ h6 {
 
 
     @media only screen and (max-width: 600px) {
-      .hover-text {
+      .hover-text1 {
             font-family: Clash Display;
         font-size: 40px;
         margin-left: 10px;
@@ -689,7 +696,7 @@ h6 {
     }
     
     @media only screen and (min-width: 600px) and (max-width: 1200px) {
-      .hover-text {
+      .hover-text1 {
         font-size: 60px;
         margin-left: 15px;
       }
