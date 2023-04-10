@@ -249,7 +249,7 @@ nav #menu li a:hover {
            
       }
       .toggle{
-            padding-right: 5%;
+            left: 20px;
       }
 
       nav #brand {
@@ -263,11 +263,10 @@ nav #menu li a:hover {
             font-size: 20px;
             font-weight: 300;
             top: 0%;
-            right: 50%;
-            
+            left: 50%;            
       }
       .menu{
-            right: 50%;
+            left: 50%;
       }
 
       #resize li span {
@@ -697,7 +696,7 @@ h6 {
     
     @media only screen and (min-width: 600px) and (max-width: 1200px) {
       .hover-text1 {
-        font-size: 60px;
+        font-size: 12px;
         margin-left: 15px;
       }
       .hover-effect {
@@ -723,7 +722,7 @@ h6 {
     
     @media only screen and (min-width: 1200px) {
       .hover-text1 {
-        font-size: 80px;
+        font-size: 50px;
         margin-left: 20px;
       }
       
