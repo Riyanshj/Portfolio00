@@ -689,7 +689,7 @@ h6 {
 
     .hover-text1:hover .hover-effect {
       visibility: visible;
-      transform: translate(calc(-50% + var(--x)), calc(-300% + var(--y))) scale(1);
+      transform: translate(calc(-50% + var(--x)), calc(0% + var(--y))) scale(1);
       cursor: none;
     }
             /* Media queries */
