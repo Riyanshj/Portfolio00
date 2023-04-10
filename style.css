@@ -133,6 +133,7 @@ nav #menu {
       right: 20px;
       position: fixed;
       top: 10px;
+      
 }
 
 nav #menu li {
@@ -167,13 +168,14 @@ nav #menu li a:hover {
       width: 30px;
       height: 20px;
       cursor: cursor;
-      
+      transition: all 0.3s ease-out;
       
       visibility: hidden;
       opacity: 0;
 }
 .toggle{
       padding: auto;
+      
 }
 .close-btn {
       position: absolute;
@@ -200,8 +202,7 @@ nav #menu li a:hover {
 #resize #menu {
       
       position: absolute;
-      left: 50%;
-      
+      left: 35%;
       text-align: center;
       
       vertical-align: center;
@@ -242,16 +243,18 @@ nav #menu li a:hover {
       #toggle {
             visibility: visible;
             opacity: 1;
+            right: 25px;
+            top: -205%;
+            transition: all 0.3s ease-out;
             
             
-            position:static;
             
            
       }
       .toggle{
-            right: 30px;
+            text-align: right;
       }
-
+    
       nav #brand {
             margin-left: 24px;
             font-size: 10px;
@@ -262,23 +265,26 @@ nav #menu li a:hover {
       #menu a {
             font-size: 20px;
             font-weight: 300;
-            top: 0%;
-            left: 70%;            
+            top: 20%
+                    
       }
-     .menu{
-      left: 0%;
+     .menu a{
+      left:200%;
      }
 
       #resize li span {
             font-weight: bolder;
             top: 0%;
             align-items: center;
+            
+            
       }
 
       nav #menu {
             display: none;
             top:0%;
-            right: 50%;
+            
+
       }
 }
 
@@ -658,14 +664,14 @@ h6 {
       font-size: 14px;
       visibility: hidden;
       transform: translate(-60%, -60%) scale(0);
-      transition: transform 0.1s ease-out;
+     
       cursor: none;
       
     }
 
     .hover-text1:hover .hover-effect {
       visibility: visible;
-      transform: translate(calc(-200% + var(--x)), calc(-200% + var(--y))) scale(1);
+      transform: translate(calc(100% + var(--x)), calc(-500% + var(--y))) scale(1);
        cursor: none;
     }
             /* Media queries */
@@ -680,7 +686,7 @@ h6 {
       .hover-text1 {
             font-family: Clash Display;
         font-size: 15px;
-        margin-left: 10px;
+       
       }
       .hover-effect {
         font-size: 10px;
@@ -693,8 +699,9 @@ h6 {
         transform: translate(calc(-30% + var(--x)), calc(-100% + var(--y))) scale(1);
       }
       .hover-text1 span{
-            font-size: 15px;
+            font-size: 40px;
             font-family: Clash Display;
+            right: 20px;
       }
     }
     
@@ -702,6 +709,7 @@ h6 {
       .hover-text1 {
         font-size: 12px;
         margin-left: 15px;
+        
       }
       .hover-effect {
         font-size: 12px;
