@@ -87,44 +87,20 @@
             <!-- <div class="whitespace"></div> -->
 
             <!--------------- form section starts here --------------->
-            <div class="container-fluid">
-                  <div class="row">
-                        <div class="col-lg-8">
-                              <form name="contact-form" id="contact-form" method="post" action="contact.php" onsubmit="sendEmail" >
+            
+                              
 
-                              <ul>
-
-                              <li class="wow fadeInUp" data-wow-delay="1.4s">
-                                    <label for="contact-name">Name :</label>
-                                    <div class="textarea">
-                                          <input type="text" name="contact-name" id="contact-name" value="" required>
+                                    <div class="hover-text1" onmousemove="updatePosition(event)" onclick="copyToClipboard()">
+                                          <p class="wow fadeInUp" data-wow-delay="1.4s">
+                                          <span>RIYANSHJ83
+                                          
+                                            <br>@GMAIL.COM</span>
+                                          </p>
+                                          <div class="hover-effect">COPY</div>
+                                          
                                     </div>
-                              </li>
-
-                              <li class="wow fadeInUp" data-wow-delay="1.6s">
-                                    <label for="contact-email">Email :</label>
-                                    <div class="textarea">
-                                          <input type="email" name="contact-email" id="contact-email" value="" required>
-                                    </div>
-                              </li>
-
-                              <li class="wow fadeInUp" data-wow-delay="1.6s">
-                                    <label for="contact-project">Message :</label>
-                                    <div class="textarea">
-                                          <textarea type="email" name="contact-project" id="contact-project" rows="6" value="" required>
-                                          </textarea>
-                                    </div>
-                              </li>
-
-                              </ul>
-
-                              <button type="submit" name="contact-submit" id="contact-submit" class="send wow fadeInUp">Send Message</button>
-
-                              </form>
-                        </div>
-                  </div>
-            </div>
-
+                                        
+                              
             <!--------------- form section ends here --------------->
 
             <div class="whitespace"></div>
@@ -178,11 +154,12 @@
                               </div>
                         </div>
                   </div>
+                  <div class="cursor"></div>  
             </div>
             <!--------------- footer ends here --------------->
 
             <br><br><br><br>
-            <div class="cursor"></div> 
+            
       </div>
 
       <!-- greensock cdn -->
@@ -296,22 +273,26 @@
         });
       });
     </script>
- <script>
-      function sendEmail(){
-            Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "riyanshj83@gmail.com",
-    Password : "349BCD4CA3C6B4B2C8FA3FBFCCC21DC179CE",
-    To : 'riyanshj83@gmail.com',
-    From : document.getElementById("contact-email").value,
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
-      }
- </script>  
+ 
     
+    <script !important>
+      function updatePosition(e) {
+        document.documentElement.style.setProperty('--x', e.clientX + 'px');
+        document.documentElement.style.setProperty('--y', e.clientY + 'px');
+      }
+      
+      function copyToClipboard() {
+        const textToCopy = document.querySelector('.hover-text1 span').textContent;
+        const el = document.createElement('textarea');
+        el.value = textToCopy;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        const copiedText = document.querySelector('.hover-effect');
+        copiedText.innerHTML = "Copied!";
+      }
+    </script>
 
     
     

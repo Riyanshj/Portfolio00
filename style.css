@@ -13,7 +13,7 @@ html, body {
       font-family: "Clash Display" !important;
       background: rgb(195, 195, 195) !important;
       color: rgb(57, 57, 57) !important;
-      cursor: url('images/cursor.svg'),auto;
+     
 }
 
 
@@ -587,77 +587,129 @@ h6 {
 
 /*--------------- contact form --------------- */
 
-#contact-form {
-      margin: 5% 1.4%;
-}
+.hover-text1 {
+      position: relative;
+      display: inline-block;
+      margin-left: 13%;
+      cursor: pointer;
+      font-size: 100px;
+      color: #202020;
+      top: 40px;
+      cursor: none;
+      
+    }
 
-#contact-form ul {
-      list-style: none;
-      border-radius: 5px;
-      margin-bottom: 40px;
-}
+    .hover-text1:hover{
+        color: #121212;
+        cursor: none;
 
-#contact-form li {
-      padding: 10px;
-}
-
-#contact-form li:last-of-type {
-      border-bottom: none;
-}
-
-#contact-form label {
-      display: block;
-      font-size: .8em;
-      color: #999;
-      padding-left: 5px;
-}
-
-#contact-form input, #contact-form textarea {
-      width: 100%;
-      padding: 5px;
-      border: none;
-      resize: vertical;
-      background: transparent;
-      color: #ffffff;
-      font-weight: bolder;
-}
-
-input:focus {
-      outline: none;
-      border: none;
-}
-
-textarea:focus {
-      outline: none;
-      border: none;
-}
-
-.textarea {
-      border-bottom: 1px solid #ffffff;
-}
-
-.send {
-      margin-left: 50px;
-      text-transform: uppercase;
-      padding: 20px 30px;
-      background: transparent;
-      color: #ffffff;
-      font-size: 14px;
-      letter-spacing: 2px;
-}
-
-.send:hover {
-      background: #000000;
-      color: #ffffff;
-}
-
-@media(max-width: 768px) {
-      #contact-form {
-            margin: 5% -8%;
-            width: 98%;
       }
-}
+      .hover-text1::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #000000;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+            cursor: none;
+            
+          }
 
+          .hover-text1:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            cursor: none;
+          }
+
+
+    .hover-text1 span{
+      font-family: Clash Display;
+      letter-spacing: 2px;
+      color: #000000;
+      font-size: 80px;
+      right: 50%;
+      cursor: none;
+      
+    }
+    .hover-effect {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #222;
+      border-radius: 80%;
+      text-align: center;
+      text-decoration: underline;
+      line-height: 100px;
+      color: #fff;
+      font-size: 14px;
+      visibility: hidden;
+      transform: translate(-60%, -60%) scale(0);
+      transition: transform 0.1s ease-out;
+      cursor: none;
+      
+    }
+
+    .hover-text1:hover .hover-effect {
+      visibility: visible;
+      transform: translate(calc(-200% + var(--x)), calc(-400% + var(--y))) scale(1);
+       cursor: none;
+            /* Media queries */
+    @media only screen and (max-width: 600px) {
+      .hover-text {
+        font-size: 40px;
+        margin-left: 10px;
+      }
+      .hover-effect {
+        font-size: 10px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        transform: translate(-50%, -50%) scale(0);
+      }
+      .hover-text1:hover .hover-effect {
+        transform: translate(calc(-30% + var(--x)), calc(-100% + var(--y))) scale(1);
+      }
+    }
+    
+    @media only screen and (min-width: 600px) and (max-width: 1200px) {
+      .hover-text {
+        font-size: 60px;
+        margin-left: 15px;
+      }
+      .hover-effect {
+        font-size: 12px;
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        transform: translate(-60%, -60%) scale(0);
+      }
+      .hover-text1:hover .hover-effect {
+        transform: translate(calc(-30% + var(--x)), calc(-300% + var(--y))) scale(1);
+      }
+    }
+    
+    @media only screen and (min-width: 1200px) {
+      .hover-text1 {
+        font-size: 80px;
+        margin-left: 20px;
+      }
+      
+      .hover-effect {
+        font-size: 14px;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        transform: translate(-60%, -60%) scale(0);
+      }
+      .hover-text1:hover .hover-effect {
+        transform: translate(calc(-30% + var(--x)), calc(-200% + var(--y))) scale(1);
+      }
+    }
+    }
 /*--------------- project page --------------- */
 
 
