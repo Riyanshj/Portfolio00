@@ -269,6 +269,7 @@ nav #menu li a:hover {
       nav #menu {
             display: none;
             top:0%;
+            right: 40%;
       }
 }
 
@@ -690,6 +691,15 @@ h6 {
       .hover-text1:hover .hover-effect {
         transform: translate(calc(-30% + var(--x)), calc(-300% + var(--y))) scale(1);
       }
+      .hover-text1 span{
+            font-family: Clash Display;
+            letter-spacing: 2px;
+            color: #000000;
+            font-size: 12px;
+            right: 50%;
+            cursor: none;
+            
+          }
     }
     
     @media only screen and (min-width: 1200px) {
