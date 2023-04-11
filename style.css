@@ -3,7 +3,70 @@
       --y: 0px;
     }
 
-
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      background: none;
+      border: none;
+      outline: none;
+      font-family: Helvetica, sans-serif;
+      font-weight: 300;
+      text-decoration: underline;
+      text-transform: uppercase;
+      font-size: 2em;
+      cursor: pointer;
+    }
+    
+    .header {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #0f0f0f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -2;
+      font-family: "Voyage";
+      font-size: 8em;
+    }
+    
+    .text-container {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #de5e40;
+      z-index: -1;
+    }
+    
+    .text-wrapper {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      left: -50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: default;
+    }
+    
+    .text {
+      width: 300%;
+      font-family: "Voyage";
+      font-size: 5vw;
+      text-transform: uppercase;
+      opacity: 0.1;
+    }
+    
 
 
 
@@ -99,14 +162,11 @@ html, body {
 /*--------------- navigation --------------- */
 nav {
       width: 100%;
-      background: #00000000;
+      background: #0f0f0f00;
       height: 80px;
       position: fixed;
       z-index: 1;
-      display: inline-flexbox;
       mix-blend-mode: difference;
-      top: 0%;
-      
 }
 
 nav #brand {
@@ -115,17 +175,14 @@ nav #brand {
       margin-left: 82px;
       line-height: 80px;
       font-weight: bold;
-      top: 0%;
+      
 }
 
 nav #brand a {
-      font-family: "Clash Display";
-      color: #ffffff;
+      font-family: Clash Display;
+      color: rgb(142, 142, 142) !important;
       transition: all 0.3s ease-out;
       mix-blend-mode: difference;
-      top: 5%;
-      font-weight: 500;
-     
 }
 
 nav #brand a:hover {
@@ -133,21 +190,20 @@ nav #brand a:hover {
 }
 
 nav #menu {
-      right: 20px;
+      float: left;
+      right: 80px;
       position: fixed;
-      top: 10px;
-      
+      mix-blend-mode: difference;
 }
 
 nav #menu li {
       padding-left: 40px;
       display: inline-block;
-      cursor: cursor;
+      cursor: pointer;
       font-weight: 300;
       line-height: 80px;
       position: relative;
       transition: all 0.3s ease-out;
-      mix-blend-mode: difference;
 }
 
 nav #menu li span {
@@ -155,7 +211,7 @@ nav #menu li span {
 }
 
 nav #menu li a {
-      color: #ffffff;
+      color: rgb(142, 142, 142) !important;
 }
 
 nav #menu li a:hover {
@@ -164,21 +220,19 @@ nav #menu li a:hover {
 
 #toggle {
       position: absolute;
-     
+      right: 80px;
+      top: 20px;
       font-weight: 300;
-    
+      z-index: 2;
       width: 30px;
-      height: 20px;
-      cursor: cursor;
-      
-      
+      height: 30px;
+      cursor: pointer;
+      float: right;
+      transition: all 0.3s ease-out;
       visibility: hidden;
       opacity: 0;
 }
-.toggle{
-      padding: auto;
-      
-}
+
 .close-btn {
       position: absolute;
       right: 16px;
@@ -193,35 +247,33 @@ nav #menu li a:hover {
       z-index: 1;
       top: 0px;
       position: fixed;
-      background: #000000;
+      background: #0f0f0f;
       width: 100%;
       height: 100%;
       visibility: hidden;
       opacity: 0;
-      
+      transition: all 1s ease-out;
 }
 
 #resize #menu {
-      
+      height: 90px;
       position: absolute;
-      left: 35%;
+      left: 45%;
+      transform: translateX(-40%);
       text-align: center;
-      
+      display: table-cell;
       vertical-align: center;
-      top: 0%;
-      height: 10px;
-      
 }
 
 #resize #menu li {
-     
+      display: block;
       text-align: center;
       padding: 10px 0;
       font-size: 50px;
       min-height: 50px;
       font-weight: bold;
       cursor: pointer;
-    
+      transition: all 0.3s ease-out;
 }
 
 #resize li:nth-child(1) {
@@ -229,7 +281,7 @@ nav #menu li a:hover {
 }
 
 #resize #menu li a {
-      color: #afafaf;
+      color: #fff;
 }
 
 #resize #menu li a:hover {
@@ -245,48 +297,29 @@ nav #menu li a:hover {
       #toggle {
             visibility: visible;
             opacity: 1;
-            right: 25px;
-            top: -200%;
-            transition: all 0.3s ease-out;
-            
-            
-            
-           
+            margin-top: 6px;
+            margin-right: 4px;
       }
-      .toggle{
-            text-align: right;
-      }
-    
+
       nav #brand {
             margin-left: 24px;
-            font-size: 10px;
-            top: 0%;
-            position:fixed;
       }
 
       #menu a {
             font-size: 20px;
             font-weight: 300;
-            top: 20%
-                    
       }
-     .menu a{
-      left:200%;
-     }
 
       #resize li span {
             font-weight: bolder;
-            top: 0%;
-            align-items: center;
-            
-            
       }
 
       nav #menu {
             display: none;
-            top:0%;
+      }
+      nav #brand a{
             
-
+            font-size: 20px;
       }
 }
 
@@ -296,6 +329,26 @@ nav #menu li a:hover {
       }
 }
 
+/*--------------- hero section --------------- */
+.hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.hero h1 {
+      font-weight: lighter;
+      text-align: center;
+      letter-spacing: -2px;
+      line-height: 58px;
+}
+
+@media(max-width: 768px) {
+      .header h1 {
+            font-size: 26px;
+      }
+}
 /*--------------- hero section --------------- */
 .hero {
       height: 100vh;
@@ -798,6 +851,7 @@ span {
 }
 
 .cursor {
+      
       pointer-events: none;
       position: fixed;
       padding: 1.75rem;
