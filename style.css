@@ -249,16 +249,15 @@ nav #menu li a:hover {
 }
 
 #toggle {
-      position: absolute;
-      right: 80px;
-      top: 20px;
+      position: sticky;
+      right: 180px;
+      top: 0%;
       font-weight: 300;
-      z-index: 2;
+     
       width: 30px;
       height: 30px;
       cursor: pointer;
-      float: right;
-      transition: all 0.3s ease-out;
+     
       visibility: hidden;
       opacity: 0;
 }
@@ -275,24 +274,27 @@ nav #menu li a:hover {
 
 #resize {
       z-index: 1;
-      top: 0px;
+      top: 0%;
       position: fixed;
       background: #0f0f0f;
       width: 100%;
-      height: 100%;
+      
       visibility: hidden;
       opacity: 0;
-      transition: all 1s ease-out;
+      transform: none!important;
+      transition: none !important;
 }
 
 #resize #menu {
       height: 90px;
       position: absolute;
       left: 45%;
-      transform: translateX(-40%);
+      transform: translateX(0%);
       text-align: center;
       display: table-cell;
       vertical-align: center;
+      transform: none!important;
+      transition: none !important;
 }
 
 #resize #menu li {
@@ -303,7 +305,8 @@ nav #menu li a:hover {
       min-height: 50px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease-out;
+      transition: none !important;
+      transform: none!important;
 }
 
 #resize li:nth-child(1) {
@@ -329,15 +332,20 @@ nav #menu li a:hover {
             opacity: 1;
             margin-top: 6px;
             margin-right: 4px;
+            top: 0%;
+
       }
 
       nav #brand {
             margin-left: 24px;
+            
+            
       }
 
       #menu a {
             font-size: 20px;
             font-weight: 300;
+            
       }
 
       #resize li span {
@@ -346,10 +354,16 @@ nav #menu li a:hover {
 
       nav #menu {
             display: none;
+           
       }
       nav #brand a{
             
             font-size: 20px;
+            text-decoration: underline;
+            
+      }
+      #brand a{
+            top: 0px;
       }
 }
 
