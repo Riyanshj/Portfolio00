@@ -57,13 +57,16 @@
                   </ul>
 
                   <div id="toggle">
-                        <div class="span">menu</div>
+                        <div class="span"> <svg viewBox="0 0 10 20">
+                              <circle cx="4" cy="5" r="1.5" fill="black"/>
+                              
+                            </svg></div>
                   </div>
 
             </nav>
 
             <div id="resize">
-                  <div class="close-btn">close</div>
+                  <div class="close-btn">X</div>
 
                   <ul id="menu">
                         <li><a href="index.html" style="text-decoration: underline">home<span>.</span></a></li>
@@ -285,7 +288,7 @@ const animateTrailer = (e, interacting) => {
 const getTrailerClass = type => {
   switch(type) {
     case "video":
-      return "fa-solid fa-play";
+      return "fa-sharp fa-solid fa-arrows-to-dot fa-spin";
     default:
       return "fa-solid fa-location-arrow fa-bounce"; 
   }

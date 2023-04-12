@@ -12,7 +12,7 @@ html, body {
       height: 100%;
       font-family: "Clash Display" !important;
       background: rgb(195, 195, 195) !important;
-      color: rgb(57, 57, 57) ;
+      color: rgb(57, 57, 57) !important;
      
 }
 
@@ -38,6 +38,7 @@ html, body {
       
       display: grid;
       place-items: center;
+      mix-blend-mode: difference;
     }
     
     #trailer:not([data-type=""]) > #trailer-icon {
@@ -164,7 +165,7 @@ html, body {
             width: 0;
       }
       to {
-            width: 23rem;
+            width: 24rem;
       }
 }
 
@@ -174,7 +175,7 @@ html, body {
                   width: 0;
             }
             to {
-                  width: 17em;
+                  width: 8.5em;
             }
       }
 }
@@ -191,11 +192,11 @@ html, body {
 /*--------------- navigation --------------- */
 nav {
       width: 100%;
-      background: #0f0f0f00;
+      background: rgba(195, 195, 195, 0);
       height: 80px;
       position: fixed;
       z-index: 1;
-      mix-blend-mode: difference;
+      font-family: "Clash Display" !important;
       top: 0%;
 }
 
@@ -205,13 +206,14 @@ nav #brand {
       margin-left: 82px;
       line-height: 80px;
       font-weight: bold;
-      
+      mix-blend-mode: difference;
 }
 
 nav #brand a {
-      font-family: Clash Display;
-      color: rgb(142, 142, 142) !important;
+      color: rgb(57, 57, 57) ;
       transition: all 0.3s ease-out;
+      font-family: "Clash Display" !important;
+      font-weight: 600;
       mix-blend-mode: difference;
 }
 
@@ -224,6 +226,7 @@ nav #menu {
       right: 80px;
       position: fixed;
       mix-blend-mode: difference;
+      
 }
 
 nav #menu li {
@@ -234,37 +237,43 @@ nav #menu li {
       line-height: 80px;
       position: relative;
       transition: all 0.3s ease-out;
+      font-weight: 700;
+      mix-blend-mode: difference;
+      
 }
 
 nav #menu li span {
       font-weight: 700;
+      color: rgb(57, 57, 57) ;
 }
 
 nav #menu li a {
-      color: rgb(142, 142, 142) !important;
+      color: rgb(57, 57, 57) ;
 }
 
 nav #menu li a:hover {
       text-decoration: none;
+      color: rgb(57, 57, 57) ;
 }
 
 #toggle {
-      position: sticky;
-      right: 180px;
-      top: 0%;
+      position: absolute;
+      right: 30px;
+      top: 20px;
       font-weight: 300;
-     
+      z-index: 2;
       width: 30px;
       height: 30px;
       cursor: pointer;
-     
+      float: right;
+      transition: all 0.3s ease-out;
       visibility: hidden;
       opacity: 0;
 }
 
 .close-btn {
       position: absolute;
-      right: 16px;
+      right: 30px;
       font-weight: 300;
       z-index: 2;
       cursor: pointer;
@@ -274,27 +283,24 @@ nav #menu li a:hover {
 
 #resize {
       z-index: 1;
-      top: 0%;
+      top: 0px;
       position: fixed;
       background: #0f0f0f;
       width: 100%;
-      
+      height: 100%;
       visibility: hidden;
       opacity: 0;
-      transform: none!important;
-      transition: none !important;
+      transition: all 1s ease-out;
 }
 
 #resize #menu {
       height: 90px;
       position: absolute;
       left: 45%;
-      transform: translateX(0%);
+      transform: translateX(-40%);
       text-align: center;
       display: table-cell;
       vertical-align: center;
-      transform: none!important;
-      transition: none !important;
 }
 
 #resize #menu li {
@@ -305,8 +311,7 @@ nav #menu li a:hover {
       min-height: 50px;
       font-weight: bold;
       cursor: pointer;
-      transition: none !important;
-      transform: none!important;
+      transition: all 0.3s ease-out;
 }
 
 #resize li:nth-child(1) {
@@ -330,18 +335,20 @@ nav #menu li a:hover {
       #toggle {
             visibility: visible;
             opacity: 1;
-            margin-top: 6px;
+            
             margin-right: 4px;
-            top: 0%;
-
+            top: -175%;
       }
 
       nav #brand {
             margin-left: 24px;
-            
-            
+            font-size: 15px;
+           
       }
-
+      #menu a{
+            top:-175%
+      }
+      
       #menu a {
             font-size: 20px;
             font-weight: 300;
@@ -354,16 +361,6 @@ nav #menu li a:hover {
 
       nav #menu {
             display: none;
-           
-      }
-      nav #brand a{
-            
-            font-size: 20px;
-            text-decoration: underline;
-            
-      }
-      #brand a{
-            top: 0px;
       }
 }
 
@@ -372,6 +369,8 @@ nav #menu li a:hover {
             visibility: hidden !important;
       }
 }
+
+
 
 /*--------------- hero section --------------- */
 .hero {
@@ -792,7 +791,8 @@ h6 {
     @media only screen and (max-width: 600px) {
       .hover-text1 {
             font-family: Clash Display;
-        font-size: 15px;
+        font-size: 15px!important;
+        left: -30%;
        
       }
       .hover-effect {

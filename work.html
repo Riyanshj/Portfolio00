@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!DOCtype html>
 <html lang="en">
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="author" content="harrnish">
+      <meta name="author">
 
       <title>Work</title>
 
       <!-- stylesheet -->
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="work.css">
 
       <!-- bootstrap cdns -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -21,11 +21,20 @@
       <!-- for on scroll animations -->
       <link rel="stylesheet" href="animate.css">
       <script src="wow.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+      <!-- smooth scrollbar  -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.7.4/smooth-scrollbar.js"></script>
+      <script src="script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+      <script src="https://kit.fontawesome.com/3daa9d0193.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body id="my-scrollbar">
+      <header class="header">
+    
+      </header>
       <div id="trailer">
-            <i id="trailer-icon"  class="fa-solid fa-play"></i>
+            <i id="trailer-icon" class="fa-solid fa-arrow-pointer fa-bounce"></i>
           </div>
           
           
@@ -34,7 +43,7 @@
             <!--------------- navbar starts here --------------->
             <nav>
                   <span id="brand">
-                        <a href="index.html">RIYANSH</a>
+                        <a href="index.html">RIYANSH JAIN</a>
                   </span>
 
                   <ul id="menu">
@@ -45,13 +54,19 @@
                   </ul>
 
                   <div id="toggle">
-                        <div class="span">menu</div>
+                        <div class="span">
+                              <svg viewBox="0 0 10 20">
+                                    <circle cx="4" cy="5" r="1.5" fill="black"/>
+                                    
+                                  </svg>
+                                  
+                        </div>
                   </div>
 
             </nav>
 
             <div id="resize">
-                  <div class="close-btn">close</div>
+                  <div class="close-btn">X</div>
 
                   <ul id="menu">
                         <li><a href="index.html">home<span>.</span></a></li>
@@ -85,57 +100,90 @@
 
             <!--------------- projects section starts here --------------->
             
-                  <div class="container-fluid">
-                        <br><br><br>
-      
+            <div class="contain" >
+                  <div class="interactable" data-type="video">
+                  <div class="work-items">
+                    <span>
+                        <div class="wow fadeInUp" data-wow-delay="1.4s">
+                      <div class="work-item item-1">
+                        <h1>SOCIAL</h1>
+                        <span><img src="images/ui.png" alt="" /></span>
+                        <h1>MEDIA</h1>
+                        <h1>UI</h1>
+                        <p>2021</p>
+                      </div>
+                      </div>
+                    </span>
+                    <div class="wow fadeInUp" data-wow-delay="1.6s">
+                    <div class="line"></div>
+                    <span>
                         
-      
-                        <div class="vertical"></div>
-                        <br>
-      
+                      <div class="work-item item-2">
+                        <h1>RAC</h1>
+                        <span><img src="/3.jpg" alt="" /></span>
+                        <h1>ING </h1>
+                        <span><img src="/4.jpg" alt="" /></span>
+                        <h1>GAME</h1>
+                        <p>2021</p>
+                      </div>
+                        </div>
+                    </span>
+                    <div class="wow fadeInUp" data-wow-delay="1.8s">
+                    <div class="line"></div>
+                    <span>
                         
+                      <div class="work-item item-3">
+                        <h1>STACK</h1>
+                        <span><img src="images/stack.png" alt="" /></span>
+                        <h1>GAM</h1>
+                        <span><img src="/4.jpg" alt="" /></span>
+                        <h1>E</h1>
+                        <p>2021</p>
+                      </div>
+                        </div>
+                    </span>
+                    <div class="wow fadeInUp" data-wow-delay="2s">
+                    <div class="line"></div>
+                    <span>
                         
-                        <div class="interactable" data-type="video">
-                        <div class="row">
-                              <div class="col-lg-8"></div>
-      
-                              <div class="col-lg-4 project project1 wow fadeInUp" onclick="location.href='project.html'"></div>
+                      <div class="work-item item-4">
+                        <h1>NETFLIX </h1>
+                        <span><img src="images/toutube.png" alt="" /></span>
+                        <h1>REDESIGNED</h1>
+                        <p>2021</p>
+                      </div>
                         </div>
-                        </div>
-      
-                        <div class="whitespace"></div>
-                        <div class="interactable" data-type="video">
-                        <div class="row">
-                              <div class="col-lg-6 project project2 wow fadeInUp" onclick="location.href='project.html'"></div>
-      
-                              <div class="col-lg-6"></div>
-                        </div>
-                        </div>
-      
-                        <div class="whitespace"></div>
-                        <div class="interactable" data-type="video">
-                        <div class="row">
-                              <div class="col-lg-7"></div>
-      
-                              <div class="col-lg-4 project project3 wow fadeInUp" onclick="location.href='project.html'"></div>
-      
-                              <div class="col-lg-1"></div>
-                        </div>
-                        </div>
-      
-                        <div class="whitespace"></div>
-                        <div class="interactable" data-type="video">
-                        <div class="row">
-                              <div class="col-lg-1"></div>
-      
-                              <div class="col-lg-5 project project4 wow fadeInUp" onclick="location.href='project.html'"></div>
-      
-                              <div class="col-lg-6"></div>
-                        </div>
+                    </span>
+                    <div class="wow fadeInUp" data-wow-delay="2.2s">
+                    <div class="line"></div>
+                    <span>
+                        
+                      <div class="work-item item-5">
+                        <h1>3D</h1>
+                        <span><img src="images/musik.png" alt="" /></span>
+                        <h1>MUSIC </h1>
+                        <span><img src="/4.jpg" alt="" /></span>
+                        <h1>WEBSITE</h1>
+                        <p>2021</p>
+                      </div>
+                      </div>
+                    </span>
+                    <div class="wow fadeInUp" data-wow-delay="2.4s">
+                    <div class="line"></div>
+                    <span>
+                        
+                      <div class="work-item item-6">
+                        <h1>MORE</h1>
+                        <span><img src="/3.jpg" alt="" /></span>
+                        <h1>SOON</h1>
+                        <span><img src="/4.jpg" alt="" /></span>
+                        <h1>....</h1>
+                      </div>
+                      </div>
                   </div>
-                        
-                  </div>
-            
+            </div>
+      </div>
+         
 
             <!--------------- projects section ends here --------------->
 
@@ -248,7 +296,8 @@
 
 
       </script>
-     <script>
+
+<script>
       const trailer = document.getElementById("trailer");
 
 const animateTrailer = (e, interacting) => {
@@ -268,7 +317,8 @@ fill: "forwards"
 const getTrailerClass = type => {
 switch(type) {
 case "video":
-return "fa-solid fa-play";
+return "fa-sharp fa-solid fa-arrows-to-dot fa-spin";
+
 default:
 return "fa-solid fa-location-arrow fa-bounce"; 
 }
