@@ -24,6 +24,10 @@
 
 </head>
 <body>
+      <div id="trailer">
+            <i id="trailer-icon" class="fa-solid fa-play"></i>
+          </div>
+          
             <!--------------- navbar starts here --------------->
             <nav>
                   <span id="brand">
@@ -33,7 +37,7 @@
                   <ul id="menu">
                         <li><a href="index.html">home<span>.</span></a></li>
                         <li><a href="work.html">work<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
+                        <li><a href="about.html" style="text-decoration: underline;">about me<span>.</span></a></li>
                         <li><a href="contact.html">contact<span>.</span></a></li>
                   </ul>
 
@@ -49,7 +53,7 @@
                   <ul id="menu">
                         <li><a href="index.html">home<span>.</span></a></li>
                         <li><a href="work.html">work<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
+                        <li><a href="about.html" style="text-decoration: underline">about me<span>.</span></a></li>
                         <li><a href="contact.html">contact<span>.</span></a></li>
                   </ul>
             </div>
@@ -112,32 +116,41 @@
                               <div class="row">
                                     <div class="col-lg-4" id="personal">
                                           <p class="wow fadeInUp">connect with me</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @jriyansh09</h4>
+                                          <div class="interactable" data-type="link">
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/jriyansh09/" style='color:rgb(57, 57, 57) ;'>riyansh09</a></h4>
+                                    </div>
                                           <br><br>
                                     </div>
-
+                                    
                                     <div class="col-lg-4" id="media">
                                           <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
 
                                           <ul>
+                                                <div class="interactable" data-type="link">
                                                 <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: rgb(57, 57, 57) ;">Li</a></li>
                                                 <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: rgb(57, 57, 57) ;">IG</a></li>
                                                 <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: rgb(57, 57, 57) ;">Be</a></li>
+                                          </div>
+                                          </ul>
 
                                           <br><br>
                                     </div>
 
                                     <div class="col-lg-4" id="address">
+
                                           <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">riyanshj83@gmail.com</h4>
+                                          <div class="interactable" data-type="link">
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="mailto:riyanshj83@gmail.com" style='color:rgb(57, 57, 57) ;'>riyanshj83@gmail.com</h4></a>
+                                    </div>
                                           <br><br>
                                     </div>
                               </div>
                         </div>
                   </div>
-            </div>
+                   
+            </div
 
-            <!--------------- footer ends here --------------->
+            <!------------ footer ends here --------------->
 
             <br><br><br><br>
             <div class="cursor"></div>
@@ -188,39 +201,46 @@
 
 
       </script>
-      <script>
+<script>
+      const trailer = document.getElementById("trailer");
 
-            (function () {
-            
-                  const link = document.querySelectorAll('nav > .hover-this');
-                  const cursor = document.querySelector('.cursor');
-            
-                  const animateit = function (e) {
-                        const span = this.querySelector('span');
-                        const { offsetX: x, offsetY: y } = e,
-                        { offsetWidth: width, offsetHeight: height } = this,
-            
-                        move = 25,
-                        xMove = x / width * (move * 2) - move,
-                        yMove = y / height * (move * 2) - move;
-            
-                        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-            
-                        if (e.type === 'mouseleave') span.style.transform = '';
-                  };
-            
-                  const editCursor = e => {
-                        const { clientX: x, clientY: y } = e;
-                        cursor.style.left = x + 'px';
-                        cursor.style.top = y + 'px';
-                  };
-            
-                  link.forEach(b => b.addEventListener('mousemove', animateit));
-                  link.forEach(b => b.addEventListener('mouseleave', animateit));
-                  window.addEventListener('mousemove', editCursor);
-            
-            })();
-            
-            </script>
+const animateTrailer = (e, interacting) => {
+const x = e.clientX - trailer.offsetWidth / 2,
+  y = e.clientY - trailer.offsetHeight / 2;
+
+const keyframes = {
+transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
+}
+
+trailer.animate(keyframes, { 
+duration: 800, 
+fill: "forwards" 
+});
+}
+
+const getTrailerClass = type => {
+switch(type) {
+case "video":
+return "fa-solid fa-play";
+default:
+return "fa-solid fa-location-arrow fa-bounce"; 
+}
+}
+
+window.onmousemove = e => {
+const interactable = e.target.closest(".interactable"),
+  interacting = interactable !== null;
+
+const icon = document.getElementById("trailer-icon");
+
+animateTrailer(e, interacting);
+
+trailer.dataset.type = interacting ? interactable.dataset.type : "";
+
+if(interacting) {
+icon.className = getTrailerClass(interactable.dataset.type);
+}
+}
+</script>
 </body>
 </html>

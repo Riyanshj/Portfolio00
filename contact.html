@@ -23,9 +23,13 @@
       <script src="wow.min.js"></script>
       <script src="https://smtpjs.com/v3/smtp.js">
       </script>
+      <script src="https://kit.fontawesome.com/3daa9d0193.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
+      <div id="trailer">
+            <i id="trailer-icon"  class="fa-solid fa-at"></i>
+          </div> 
 
       <div class = "abc"><marquee>
             CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US /
@@ -43,7 +47,7 @@
                         <li><a href="index.html">home<span>.</span></a></li>
                         <li><a href="work.html">work<span>.</span></a></li>
                         <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html">contact<span>.</span></a></li>
+                        <li><a href="contact.html" style="text-decoration: underline" >contact<span>.</span></a></li>
                   </ul>
 
                   <div id="toggle">
@@ -59,7 +63,7 @@
                         <li><a href="index.html">home<span>.</span></a></li>
                         <li><a href="work.html">work<span>.</span></a></li>
                         <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html">contact<span>.</span></a></li>
+                        <li><a href="contact.html" style="text-decoration: underline ">contact<span>.</span></a></li>
                   </ul>
             </div>
 
@@ -92,9 +96,12 @@
 
                                     <div class="hover-text1" onmousemove="updatePosition(event)" onclick="copyToClipboard()">
                                           <p class="wow fadeInUp" data-wow-delay="1.4s">
+                                                <div class="interactable" data-type="video">
                                           <span>RIYANSHJ83@GMAIL.COM</span>
+
                                           </p>
-                                          <div class="hover-effect">COPY</div>
+                                    </div>
+                                          
                                           
                                     </div>
                                         
@@ -128,7 +135,9 @@
                               <div class="row">
                                     <div class="col-lg-4" id="personal">
                                           <p class="wow fadeInUp">connect with me</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @jriyansh09</h4>
+                                          <div class="interactable" data-type="link">
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/jriyansh09/" style='color:rgb(57, 57, 57) ;'>riyansh09</a></h4>
+                                    </div>
                                           <br><br>
                                     </div>
                                     
@@ -136,23 +145,28 @@
                                           <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
 
                                           <ul>
+                                                <div class="interactable" data-type="link">
                                                 <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: rgb(57, 57, 57) ;">Li</a></li>
                                                 <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: rgb(57, 57, 57) ;">IG</a></li>
                                                 <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: rgb(57, 57, 57) ;">Be</a></li>
+                                          </div>
                                           </ul>
 
                                           <br><br>
                                     </div>
 
                                     <div class="col-lg-4" id="address">
+
                                           <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">riyanshj83@gmail.com</h4>
+                                          <div class="interactable" data-type="link">
+                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="mailto:riyanshj83@gmail.com" style='color:rgb(57, 57, 57) ;'>riyanshj83@gmail.com</h4></a>
+                                    </div>
                                           <br><br>
                                     </div>
                               </div>
                         </div>
                   </div>
-                  <div class="cursor"></div>  
+                   
             </div>
             <!--------------- footer ends here --------------->
 
@@ -293,7 +307,49 @@
     </script>
 
     
-    
+<script>
+      const trailer = document.getElementById("trailer");
+
+const animateTrailer = (e, interacting) => {
+const x = e.clientX - trailer.offsetWidth / 2,
+  y = e.clientY - trailer.offsetHeight / 2;
+
+const keyframes = {
+transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
+}
+
+trailer.animate(keyframes, { 
+duration: 800, 
+fill: "forwards" 
+});
+}
+
+const getTrailerClass = type => {
+switch(type) {
+case "video":
+return "fa-solid fa-at";
+default:
+return "fa-solid fa-location-arrow fa-bounce"; 
+}
+}
+
+window.onmousemove = e => {
+const interactable = e.target.closest(".interactable"),
+  interacting = interactable !== null;
+
+const icon = document.getElementById("trailer-icon");
+
+animateTrailer(e, interacting);
+
+trailer.dataset.type = interacting ? interactable.dataset.type : "";
+
+if(interacting) {
+icon.className = getTrailerClass(interactable.dataset.type);
+}
+}
+</script>
+
+
     
 </body>
 </html>
