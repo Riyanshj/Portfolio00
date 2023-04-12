@@ -215,6 +215,7 @@ nav #brand a {
       font-family: "Clash Display" !important;
       font-weight: 600;
       mix-blend-mode: difference;
+      top: 0%;
 }
 
 nav #brand a:hover {
@@ -258,7 +259,7 @@ nav #menu li a:hover {
 
 #toggle {
       position: absolute;
-      right: 30px;
+      right: 10px;
       top: 20px;
       font-weight: 300;
       z-index: 2;
@@ -345,6 +346,10 @@ nav #menu li a:hover {
             font-size: 15px;
            
       }
+      nav #brand a{
+            top:-100%;
+            font-size: 15px;
+          }
       #menu a{
             top:-175%
       }
