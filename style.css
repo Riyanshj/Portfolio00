@@ -260,7 +260,7 @@ nav #menu li a:hover {
 #toggle {
       position: absolute;
       right: 10px;
-      top: 20px;
+      top: 0px;
       font-weight: 300;
       z-index: 2;
       width: 30px;
