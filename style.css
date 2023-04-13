@@ -209,7 +209,7 @@ nav #brand {
       mix-blend-mode: difference;
 }
 
-nav #brand a {
+.brand a {
       color: rgb(57, 57, 57) ;
       transition: all 0.3s ease-out;
       font-family: "Clash Display" !important;
@@ -346,9 +346,10 @@ nav #menu li a:hover {
             font-size: 15px;
            
       }
-      nav #brand a{
-            top:-100%;
+      .brand a{
             font-size: 15px;
+            margin-left: 15%;
+            top: 15%;
           }
       #menu a{
             top:-175%

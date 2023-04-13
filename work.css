@@ -254,7 +254,7 @@ nav #menu li a:hover {
 
 #toggle {
     position: absolute;
-    left: 85%;
+    left: 88%;
     top: 30%;
     font-weight: 300;
     z-index: 2;
@@ -351,6 +351,7 @@ nav #menu li a:hover {
     #menu a {
           font-size: 20px;
           font-weight: 300;
+          mix-blend-mode: difference;
           
     }
 
