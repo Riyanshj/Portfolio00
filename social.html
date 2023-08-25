@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media App UI</title>
+    <link rel="stylesheet" href="project showcase.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
+
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+
+        <div class="header-hamburger" id="closeButton" style="cursor: pointer;">close
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div class="main-title">
+          <div class="title-logo" ><img src="images/arrow.png" alt=""></div>
+
+
+
+
+          <div class="title"> Social Media App UI</div>
+        </div>
+        <div class="divider"></div>
+        <div class="hero-image">
+          <div class="hero-title">
+            <div>"SocialSphere UI Project: Elevating user engagement through a sleek and intuitive interface design. Seamlessly blending vibrant content cards, intuitive navigation, and real-time interaction features to create a captivating and user-centered social media experience."</div>
+          
+            <div class="arrow-img"><img src="images/ui.png" alt="" /></div>
+            <div></div>
+          </div>
+          <div class="hero-copy">
+            <div class="copy-left">
+              <div class="btns">
+               
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      gsap.from(
+        ".header > div, .main-title > div, .divider, .hero-image, .hero-title > div, .btns> div, .hero-copy > div",
+        2,
+        {
+          y: "200",
+          opacity: 0,
+          ease: Expo.easeInOut,
+          delay: 1,
+          stagger: 0.08,
+        }
+      );
+
+      gsap.from(".title-logo img", 1, {
+        scale: 0,
+        ease: Elastic.easeOut,
+        delay: 4,
+      });
+
+// Select the "close" button element
+const closeButton = document.getElementById("closeButton");
+
+// Add a click event listener to the "close" button
+closeButton.addEventListener("click", () => {
+  // Add the shrink-move-effect class to the body
+  document.body.classList.add("shrink-move-effect");
+
+  // Start loading the new page in the background
+  const newPage = new Image();
+  newPage.src = "project.html"; // Replace with your actual new page URL
+
+  // Wait for the animation to complete before navigating to the new page
+  setTimeout(() => {
+    // Navigate to the new page
+    window.location.href = "project.html"; // Replace with your actual new page URL
+  }, 1000); // Adjust the delay as needed to match the transition duration
+});
+
+
+
+
+
+    </script>
+  </body>
+</html>

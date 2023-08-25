@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=panchang@800&display=swap" rel="stylesheet">
+
+
+  <style>
+    html {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s;
+      position: relative;
+      cursor: none;
+    }
+
+
+    /* Add random lines in the background */
+    html::before,
+    html::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: -1;
+    }
+
+    /* Vertical Line */
+    html::before {
+      width: 1px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+
+    /* Horizontal Line */
+    html::after {
+      width: 100%;
+      height: 1px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+
+    .word-container {
+      font-family: "panchang";
+      font-size: 128px;
+      font-weight: bold;
+      color: #00000000;
+      cursor: default;
+      filter: blur(3px);
+      transition: ease-in-out .25s;
+      -webkit-text-stroke: 10px #000000;
+      display: flex;
+
+    }
+
+    .word-container:hover {
+      filter: blur(0px);
+    }
+
+    .text {
+      text-transform: capitalize;
+      filter: blur(2px)!important;
+      transition: ease-in-out .25s;
+    }
+
+    .text:hover {
+      filter: blur(0px)!important;
+    }
+
+    /* Additional styling for corner texts */
+    .corner-text {
+      position: absolute;
+      font-size: 18px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      background-color: transparent;
+      padding: 50px 140px;
+      transition:  ease-in-out .5s;
+      
+    }
+    @media (max-width: 992px) {
+      .body{
+        height: 100vh;
+        width: 100vw;
+      }
+      .corner-text {
+        padding: 250px 75px;
+        transition:  ease-in-out 2s;
+        font-size: 24px;
+      }
+      .word-container {
+        font-size: 64px;
+        -webkit-text-stroke: 0px black;
+        color: #000000;
+      }
+    }
+
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    /* Hover styles */
+    .corner-text:hover {
+      z-index: 2;
+    }
+
+    .corner-text.top-left:hover ~ .word-container,
+    .corner-text.top-right:hover ~ .word-container,
+    .corner-text.bottom-left:hover ~ .word-container,
+    .corner-text.bottom-right:hover ~ .word-container {
+      color: white;
+      
+    }
+
+    .corner-text.top-left:hover ~ html,
+    .corner-text.top-right:hover ~ html,
+    .corner-text.bottom-left:hover ~ html,
+    .corner-text.bottom-right:hover ~ html {
+      background-color: black;
+      mix-blend-mode: difference;
+    }
+
+    .corner-text a{
+      color: #ffffff!important;
+      mix-blend-mode: difference;
+
+    }
+    .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader-ring {
+            border: 4px solid rgb(255, 255, 255);
+            border-top: 4px solid #00ff26;
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+        }
+
+        .loader-image {
+            width: 225px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+        }
+        .corner-text::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+
+}
+
+.corner-text:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+ 
+}
+
+.corner-text::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(0, 0%, 0%);
+  z-index: -1;
+  transition: transform .3s ease;
+ 
+}
+.svg-animation {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+ z-index: 99;
+}
+
+
+
+
+       
+  </style>
+</head>
+<body>
+  <div class="preloader">
+    <div class="loader-ring"></div>
+    <div class="loader-container">
+
+    <img class="loader-image" src="images/newwww.png" alt="Loader Image">
+  </div>
+    <div class="loading-text">Loading...</div>
+</div>
+  
+<div id="mainContent" style="display: none;"> 
+  <svg id="svgContainer" class="svg-animation" width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="mix-blend-mode:difference;">
+    <rect width="20" height="20" style="fill:rgb(255, 255, 255);stroke-width:3;stroke:rgb(255, 255, 255);" />
+  
+  </svg>
+
+  <div class="word-container" id="wordContainer">
+    <span class="text">H</span>
+    <span class="text">E</span>
+    <span class="text">L</span>
+    <span class="text">L</span>
+    <span class="text">O</span>
+    <span class="text">!</span>
+    <span class="text">!</span>
+  </div>
+
+
+</div></div>
+
+
+  <!-- Add corner texts -->
+  <div class="corner-text top-left" ><a href="about.html" style="text-decoration: none;">ABOUT</a> </div>
+  <div class="corner-text top-right"><a href="project.html" style="text-decoration: none;">PROJECTS</div>
+  <div class="corner-text bottom-left">MY RESUME</div>
+  <div class="corner-text bottom-right"><a href="contact.html" style="text-decoration: none;">CONTACT</a></div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+ 
+  <script>
+
+    
+    const wordContainer = document.getElementById('wordContainer');
+    const letters = Array.from(wordContainer.querySelectorAll('.text'));
+
+    window.addEventListener('load', () => {
+            // Delay hiding the preloader for 3 seconds
+            setTimeout(() => {
+                const preloader = document.querySelector('.preloader');
+                preloader.style.display = 'none';
+
+                // Show the main content with animation
+                const mainContent = document.getElementById('mainContent');
+                mainContent.style.display = 'block';
+                gsap.fromTo(mainContent, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.inOut' });
+
+                // Your existing JavaScript code
+                // ...
+
+                // Call the shuffleLetters function after loading
+                shuffleLetters();
+            }, 3000);
+        });
+    // Function to shuffle the letters
+    function shuffleLetters() {
+      const shuffledText = "Riyansh";
+      const shuffledLetters = shuffledText.split('');
+
+      letters.forEach((letter, index) => {
+        gsap.to(letter, {
+          duration: 0.5,
+          delay: index * 0.1,
+          opacity: 0,
+          scale: 0,
+          // Apply text blur
+          ease: "back.out(1.7)",
+          onComplete: () => {
+            letter.textContent = shuffledLetters[index];
+            gsap.to(letter, {
+              duration: 0.5,
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0)", // Remove text blur
+            });
+          }
+        });
+      });
+    }
+
+
+  </script>
+  <script>
+const svganimation = document.querySelector('.svg-animation');
+
+// Add an event listener to track the cursor movement
+document.addEventListener('mousemove', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    // Move the SVG element to the cursor position
+    svgAnimation.style.left = `${x}px`;
+    svgAnimation.style.top = `${y}px`;
+});
+
+// Animate the SVG element on cursor hover
+svgAnimation.addEventListener('mouseenter', () => {
+    gsap.fromTo(svgAnimation, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+});
+
+svgAnimation.addEventListener('mouseleave', () => {
+    gsap.to(svgAnimation, { scale: 1, duration: 0.3, ease: 'power1.out' });
+});
+  </script>
+  <script>
+    // Find the SVG element
+const svgAnimation = document.querySelector('.svg-animation');
+
+// Add an event listener to track the cursor movement
+document.addEventListener('mousemove', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    // Move the SVG element to the cursor position
+    svgAnimation.style.left = `${x}px`;
+    svgAnimation.style.top = `${y}px`;
+});
+
+// Animate the SVG element on cursor hover
+svgAnimation.addEventListener('mouseenter', () => {
+    gsap.fromTo(svgAnimation, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+});
+
+svgAnimation.addEventListener('mouseleave', () => {
+    gsap.to(svgAnimation, { scale: 1, duration: 0.3, ease: 'power1.out' });
+});
+
+  </script>
+  <script>
+    const svganimatio = document.querySelector('.svg-animatio');
+    
+    // Add an event listener to track the cursor movement
+    document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+    
+        // Move the SVG element to the cursor position
+        svganimatio.style.left = `${x}px`;
+        svganimatio.style.top = `${y}px`;
+    });
+    
+    // Animate the SVG element on cursor hover
+    svganimatio.addEventListener('mouseenter', () => {
+        gsap.fromTo(svganimatio, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+    });
+    
+    svganimatio.addEventListener('mouseleave', () => {
+        gsap.to(svganimatio, { scale: 1, duration: 0.3, ease: 'power1.out' });
+    });
+      </script>
+      <script>
+        // Find the SVG element
+    const svgAnimatio = document.querySelector('.svg-animatio');
+    
+    // Add an event listener to track the cursor movement
+    document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+    
+        // Move the SVG element to the cursor position
+        svganimatio.style.left = `${x}px`;
+        svganimatio.style.top = `${y}px`;
+    });
+    
+    // Animate the SVG element on cursor hover
+    svganimatio.addEventListener('mouseenter', () => {
+        gsap.fromTo(svganimatio, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+    });
+    
+    svganimatio.addEventListener('mouseleave', () => {
+        gsap.to(svganimatio, { scale: 1, duration: 0.3, ease: 'power1.out' });
+    });
+    
+      </script>
+  <script>
+    // Find the loader container
+const loaderContainer = document.querySelector('.loader-container');
+
+// Create the split loader with GSAP
+function createSplitLoader() {
+  const colors = ['#00ff26', '#ff0000', '#0000ff', '#ffff00', '#ff00ff'];
+  
+  for (let i = 0; i < 5; i++) {
+    const rect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+    rect.setAttribute('x', i * 45);
+    rect.setAttribute('y', 0);
+    rect.setAttribute('width', 45);
+    rect.setAttribute('height', 300);
+    rect.setAttribute('fill', colors[i]);
+    loaderContainer.appendChild(rect);
+  }
+}
+
+// Call the createSplitLoader function
+createSplitLoader();
+
+  </script>
+
+</body>
+</html>

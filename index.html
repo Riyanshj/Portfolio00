@@ -1,319 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="author" content="harrnish">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=panchang@800&display=swap" rel="stylesheet">
 
-      <title>Portfolio</title>
 
-      <!-- stylesheet -->
-      <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s;
+      position: relative;
+      cursor: none;
+    }
 
-      <!-- bootstrap cdns -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-      <!-- google fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-      <!-- terminal effect -->
-      <script src="t.min.js"></script>
+    /* Add random lines in the background */
+    html::before,
+    html::after {
+      content: "";
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: -1;
+    }
 
-      <!-- for on scroll animations -->
-      <link rel="stylesheet" href="animate.css">
-      <script src="wow.min.js"></script>
+    /* Vertical Line */
+    html::before {
+      width: 1px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
 
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-      <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
-      <script src="https://kit.fontawesome.com/3daa9d0193.js" crossorigin="anonymous"></script>
 
+    /* Horizontal Line */
+    html::after {
+      width: 100%;
+      height: 1px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+
+    .word-container {
+      font-family: "panchang";
+      font-size: 128px;
+      font-weight: bold;
+      color: #00000000;
+      cursor: default;
+      filter: blur(3px);
+      transition: ease-in-out .25s;
+      -webkit-text-stroke: 10px #000000;
+      display: flex;
+
+    }
+
+    .word-container:hover {
+      filter: blur(0px);
+    }
+
+    .text {
+      text-transform: capitalize;
+      filter: blur(2px)!important;
+      transition: ease-in-out .25s;
+    }
+
+    .text:hover {
+      filter: blur(0px)!important;
+    }
+
+    /* Additional styling for corner texts */
+    .corner-text {
+      position: absolute;
+      font-size: 18px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      background-color: transparent;
+      padding: 50px 140px;
+      transition:  ease-in-out .5s;
+      
+    }
+    @media (max-width: 992px) {
+      .body{
+        height: 100vh;
+        width: 100vw;
+      }
+      .corner-text {
+        padding: 250px 75px;
+        transition:  ease-in-out 2s;
+        font-size: 24px;
+      }
+      .word-container {
+        font-size: 64px;
+        -webkit-text-stroke: 0px black;
+        color: #000000;
+      }
+    }
+
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    .bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    /* Hover styles */
+    .corner-text:hover {
+      z-index: 2;
+    }
+
+    .corner-text.top-left:hover ~ .word-container,
+    .corner-text.top-right:hover ~ .word-container,
+    .corner-text.bottom-left:hover ~ .word-container,
+    .corner-text.bottom-right:hover ~ .word-container {
+      color: white;
+      
+    }
+
+    .corner-text.top-left:hover ~ html,
+    .corner-text.top-right:hover ~ html,
+    .corner-text.bottom-left:hover ~ html,
+    .corner-text.bottom-right:hover ~ html {
+      background-color: black;
+      mix-blend-mode: difference;
+    }
+
+    .corner-text a{
+      color: #ffffff!important;
+      mix-blend-mode: difference;
+
+    }
+    .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader-ring {
+            border: 4px solid rgb(255, 255, 255);
+            border-top: 4px solid #00ff26;
+            border-radius: 50%;
+            width: 400px;
+            height: 400px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+        }
+
+        .loader-image {
+            width: 225px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+        }
+        .corner-text::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+
+}
+
+.corner-text:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+ 
+}
+
+.corner-text::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: hsl(0, 0%, 0%);
+  z-index: -1;
+  transition: transform .3s ease;
+ 
+}
+.svg-animation {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+ z-index: 99;
+}
+
+
+
+
+       
+  </style>
 </head>
-<div id="trailer">
-      <i id="trailer-icon" class="fa-solid fa-location-arrow"></i>
-    </div>
+<body>
+  <div class="preloader">
+    <div class="loader-ring"></div>
+    <div class="loader-container">
+
+    <img class="loader-image" src="images/newwww.png" alt="Loader Image">
+  </div>
+    <div class="loading-text">Loading...</div>
+</div>
+  
+<div id="mainContent" style="display: none;"> 
+  <svg id="svgContainer" class="svg-animation" width="10" height="10" xmlns="http://www.w3.org/2000/svg" style="mix-blend-mode:difference;">
+    <rect width="20" height="20" style="fill:rgb(255, 255, 255);stroke-width:3;stroke:rgb(255, 255, 255);" />
+  
+  </svg>
+
+  <div class="word-container" id="wordContainer">
+    <span class="text">H</span>
+    <span class="text">E</span>
+    <span class="text">L</span>
+    <span class="text">L</span>
+    <span class="text">O</span>
+    <span class="text">!</span>
+    <span class="text">!</span>
+  </div>
+
+
+</div></div>
+
+
+  <!-- Add corner texts -->
+  <div class="corner-text top-left" ><a href="about.html" style="text-decoration: none;">ABOUT</a> </div>
+  <div class="corner-text top-right"><a href="project.html" style="text-decoration: none;">PROJECTS</div>
+  <div class="corner-text bottom-left">MY RESUME</div>
+  <div class="corner-text bottom-right"><a href="contact.html" style="text-decoration: none;">CONTACT</a></div>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+ 
+  <script>
+
     
+    const wordContainer = document.getElementById('wordContainer');
+    const letters = Array.from(wordContainer.querySelectorAll('.text'));
 
+    window.addEventListener('load', () => {
+            // Delay hiding the preloader for 3 seconds
+            setTimeout(() => {
+                const preloader = document.querySelector('.preloader');
+                preloader.style.display = 'none';
 
+                // Show the main content with animation
+                const mainContent = document.getElementById('mainContent');
+                mainContent.style.display = 'block';
+                gsap.fromTo(mainContent, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.inOut' });
 
-<div class="q">
-<div class="brand">
-      <span id="brand">
-            <a href="index.html" class="hover-this">RIYANSH JAIN</a>
-</div>
+                // Your existing JavaScript code
+                // ...
 
-           
-      
-      <!--------------- navbar starts here --------------->
-            <nav>
-                  
-                        
-                        
-                  </span>
+                // Call the shuffleLetters function after loading
+                shuffleLetters();
+            }, 3000);
+        });
+    // Function to shuffle the letters
+    function shuffleLetters() {
+      const shuffledText = "Riyansh";
+      const shuffledLetters = shuffledText.split('');
 
-                  <ul id="menu">
-                        <li><a href="index.html" style="text-decoration: underline;">home<span>.</span></a></li>
-                        <li><a href="work.html" class="hover-this">work<span>.</span></a></li>
-                        <li><a href="about.html" class="hover-this">about me<span>.</span></a></li>
-                        <li><a href="contact.html" class="hover-this" >contact<span>.</span></a></li>
-                        
-                  </ul>
-
-                  <div id="toggle">
-                        <div class="span"> <svg viewBox="0 0 10 20">
-                              <circle cx="4" cy="5" r="1.5" fill="black"/>
-                              
-                            </svg></div>
-                  </div>
-
-            </nav>
-
-            <div id="resize">
-                  <div class="close-btn">X</div>
-
-                  <ul id="menu">
-                        <li><a href="index.html" style="text-decoration: underline">home<span>.</span></a></li>
-                        <li><a href="work.html">work<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html">contact<span>.</span></a></li>
-                  </ul>
-            </div>
-
-            <!--------------- navbar ends here --------------->
-
-
-
-            <!--------------- hero section starts here --------------->
-            <div class="hero">
-                  <div class="header">
-                        <h1 class="line anim-typewriter" class="hover-this">Hello      I'm   Riyansh  Jain</h1>
-                  </div>
-            </div>
-
-            <div class="scroll-down"></div>
-            <!--------------- hero section ends here --------------->
-
-
-
-            <!--------------- projects section starts here --------------->
-            <div class="container-fluid">
-                  <br><br><br>
-
-                  <h6>Selected projects</h6>
-
-                  <div class="vertical"></div>
-                  <br>
-
-                  
-                  
-                  <div class="interactable" data-type="video">
-                  <div class="row">
-                        <div class="col-lg-8"></div>
-
-                        <div class="col-lg-4 project project1 wow fadeInUp" onclick="location.href='project.html'"></div>
-                  </div>
-                  </div>
-
-                  <div class="whitespace"></div>
-                  <div class="interactable" data-type="video">
-                  <div class="row">
-                        <div class="col-lg-6 project project2 wow fadeInUp" onclick="location.href='project.html'"></div>
-
-                        <div class="col-lg-6"></div>
-                  </div>
-                  </div>
-
-                  <div class="whitespace"></div>
-                  <div class="interactable" data-type="video">
-                  <div class="row">
-                        <div class="col-lg-7"></div>
-
-                        <div class="col-lg-4 project project3 wow fadeInUp" onclick="location.href='project.html'"></div>
-
-                        <div class="col-lg-1"></div>
-                  </div>
-                  </div>
-
-                  <div class="whitespace"></div>
-                  <div class="interactable" data-type="video">
-                  <div class="row">
-                        <div class="col-lg-1"></div>
-
-                        <div class="col-lg-5 project project4 wow fadeInUp" onclick="location.href='project.html'"></div>
-
-                        <div class="col-lg-6"></div>
-                  </div>
-            </div>
-                  
-            </div>
-      
-            <!--------------- projects section ends here --------------->
-
-
-
-            <!--------------- footer starts here --------------->
-            <div class="footer">
-                  <div class="container">
-                        <br><br>
-
-                        <div class="collab">
-                              <div class="row">
-                                    <div class="col-lg-12">
-                                          <p class="wow fadeInUp">Got an interesting project? I can help you.</p>
-                                    </div>
-                              </div>
-                        </div>
-
-                        <br>
-
-                        <div class="hr">
-                              <div class="row"></div>
-                        </div>
-
-                        <br><br>
-
-                        <div class="info">
-                              <div class="row">
-                                    <div class="col-lg-4" id="personal">
-                                          <p class="wow fadeInUp">connect with me</p>
-                                          <div class="interactable" data-type="link">
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/jriyansh09/" style='color:rgb(57, 57, 57) ;'>riyansh09</a></h4>
-                                    </div>
-                                          <br><br>
-                                    </div>
-                                    
-                                    <div class="col-lg-4" id="media">
-                                          <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
-
-                                          <ul>
-                                                <div class="interactable" data-type="link">
-                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: rgb(57, 57, 57) ;">Li</a></li>
-                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: rgb(57, 57, 57) ;">IG</a></li>
-                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: rgb(57, 57, 57) ;">Be</a></li>
-                                          </div>
-                                          </ul>
-
-                                          <br><br>
-                                    </div>
-
-                                    <div class="col-lg-4" id="address">
-
-                                          <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                          <div class="interactable" data-type="link">
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="mailto:riyanshj83@gmail.com" style='color:rgb(57, 57, 57) ;'>riyanshj83@gmail.com</h4></a>
-                                    </div>
-                                          <br><br>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-                   
-            </div>
-            <!--------------- footer ends here --------------->
-
-            <br><br><br><br>
-
-
-
-
-      </div>
-
-
-      
-</div>
-
-
-
-      <!-- greensock cdn -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-
-      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-      <script type="text/javascript">
-
-      // navigation starts here
-
-      $("#toggle").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
+      letters.forEach((letter, index) => {
+        gsap.to(letter, {
+          duration: 0.5,
+          delay: index * 0.1,
+          opacity: 0,
+          scale: 0,
+          // Apply text blur
+          ease: "back.out(1.7)",
+          onComplete: () => {
+            letter.textContent = shuffledLetters[index];
+            gsap.to(letter, {
+              duration: 0.5,
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0)", // Remove text blur
+            });
+          }
+        });
       });
-
-      $("#resize ul li a").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      $(".close-btn").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      // navigation ends here
-
-      // nav animation
-
-      TweenMax.from("#brand", 1, {
-            delay: 0.4,
-            y: 10,
-            opacity: 0,
-            ease: Expo.easeInOut
-      })
-
-      TweenMax.staggerFrom("#menu li a", 1, {
-            delay: 0.4,
-            opacity: 0,
-            ease: Expo.easeInOut
-      }, 0.1);
-
-      // nav animation ends
-
-      new WOW().init();
+    }
 
 
-     </script>
+  </script>
+  <script>
+const svganimation = document.querySelector('.svg-animation');
 
-      <script>
-            const trailer = document.getElementById("trailer");
+// Add an event listener to track the cursor movement
+document.addEventListener('mousemove', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
 
-const animateTrailer = (e, interacting) => {
-  const x = e.clientX - trailer.offsetWidth / 2,
-        y = e.clientY - trailer.offsetHeight / 2;
-  
-  const keyframes = {
-    transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
-  }
-  
-  trailer.animate(keyframes, { 
-    duration: 800, 
-    fill: "forwards" 
-  });
-}
+    // Move the SVG element to the cursor position
+    svgAnimation.style.left = `${x}px`;
+    svgAnimation.style.top = `${y}px`;
+});
 
-const getTrailerClass = type => {
-  switch(type) {
-    case "video":
-      return "fa-sharp fa-solid fa-arrows-to-dot fa-spin";
-    default:
-      return "fa-solid fa-location-arrow fa-bounce"; 
-  }
-}
+// Animate the SVG element on cursor hover
+svgAnimation.addEventListener('mouseenter', () => {
+    gsap.fromTo(svgAnimation, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+});
 
-window.onmousemove = e => {
-  const interactable = e.target.closest(".interactable"),
-        interacting = interactable !== null;
-  
-  const icon = document.getElementById("trailer-icon");
-  
-  animateTrailer(e, interacting);
-  
-  trailer.dataset.type = interacting ? interactable.dataset.type : "";
-  
-  if(interacting) {
-    icon.className = getTrailerClass(interactable.dataset.type);
-  }
-}
+svgAnimation.addEventListener('mouseleave', () => {
+    gsap.to(svgAnimation, { scale: 1, duration: 0.3, ease: 'power1.out' });
+});
+  </script>
+  <script>
+    // Find the SVG element
+const svgAnimation = document.querySelector('.svg-animation');
+
+// Add an event listener to track the cursor movement
+document.addEventListener('mousemove', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    // Move the SVG element to the cursor position
+    svgAnimation.style.left = `${x}px`;
+    svgAnimation.style.top = `${y}px`;
+});
+
+// Animate the SVG element on cursor hover
+svgAnimation.addEventListener('mouseenter', () => {
+    gsap.fromTo(svgAnimation, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+});
+
+svgAnimation.addEventListener('mouseleave', () => {
+    gsap.to(svgAnimation, { scale: 1, duration: 0.3, ease: 'power1.out' });
+});
+
+  </script>
+  <script>
+    const svganimatio = document.querySelector('.svg-animatio');
+    
+    // Add an event listener to track the cursor movement
+    document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+    
+        // Move the SVG element to the cursor position
+        svganimatio.style.left = `${x}px`;
+        svganimatio.style.top = `${y}px`;
+    });
+    
+    // Animate the SVG element on cursor hover
+    svganimatio.addEventListener('mouseenter', () => {
+        gsap.fromTo(svganimatio, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+    });
+    
+    svganimatio.addEventListener('mouseleave', () => {
+        gsap.to(svganimatio, { scale: 1, duration: 0.3, ease: 'power1.out' });
+    });
       </script>
-     
+      <script>
+        // Find the SVG element
+    const svgAnimatio = document.querySelector('.svg-animatio');
+    
+    // Add an event listener to track the cursor movement
+    document.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+    
+        // Move the SVG element to the cursor position
+        svganimatio.style.left = `${x}px`;
+        svganimatio.style.top = `${y}px`;
+    });
+    
+    // Animate the SVG element on cursor hover
+    svganimatio.addEventListener('mouseenter', () => {
+        gsap.fromTo(svganimatio, { scale: 1 }, { scale: 1.1, duration: 0.3, ease: 'power1.out' });
+    });
+    
+    svganimatio.addEventListener('mouseleave', () => {
+        gsap.to(svganimatio, { scale: 1, duration: 0.3, ease: 'power1.out' });
+    });
+    
+      </script>
+  <script>
+    // Find the loader container
+const loaderContainer = document.querySelector('.loader-container');
+
+// Create the split loader with GSAP
+function createSplitLoader() {
+  const colors = ['#00ff26', '#ff0000', '#0000ff', '#ffff00', '#ff00ff'];
+  
+  for (let i = 0; i < 5; i++) {
+    const rect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+    rect.setAttribute('x', i * 45);
+    rect.setAttribute('y', 0);
+    rect.setAttribute('width', 45);
+    rect.setAttribute('height', 300);
+    rect.setAttribute('fill', colors[i]);
+    loaderContainer.appendChild(rect);
+  }
+}
+
+// Call the createSplitLoader function
+createSplitLoader();
+
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack Game</title>
+    <link rel="stylesheet" href="project showcase.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
+
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+
+        <div class="header-hamburger" id="closeButton" style="cursor: pointer;">close
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div class="main-title">
+          <div class="title-logo" ><img src="images/arrow.png" alt=""></div>
+
+
+
+
+          <div class="title">Stack game</div>
+        </div>
+        <div class="divider"></div>
+        <div class="hero-image">
+          <div class="hero-title">
+            <div>Experience the thrill of the Stack Game – a web-based challenge that tests your timing and precision skills. Stack blocks as high as you can without letting them fall. With a minimalist design using HTML and CSS, the game offers simple yet engaging gameplay. Click to stack blocks, but beware of increasing speed. Stay focused, as a stable stack is key. Enjoy addictive, responsive fun on any device. Compete for high scores or improve your skills. How high can you stack?</div>
+          
+            <div class="arrow-img"><img src="images/game.png" alt="" /></div>
+            <div></div>
+          </div>
+          <div class="hero-copy">
+            <div class="copy-left">
+              <div class="btns">
+                <div class="btn"><a href="https://riyanshj.github.io/stack-game/" style="text-decoration: none ; color:#39ff14">WANT TO PLAY</a></div>
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      gsap.from(
+        ".header > div, .main-title > div, .divider, .hero-image, .hero-title > div, .btns> div, .hero-copy > div",
+        2,
+        {
+          y: "200",
+          opacity: 0,
+          ease: Expo.easeInOut,
+          delay: 1,
+          stagger: 0.08,
+        }
+      );
+
+      gsap.from(".title-logo img", 1, {
+        scale: 0,
+        ease: Elastic.easeOut,
+        delay: 4,
+      });
+
+// Select the "close" button element
+const closeButton = document.getElementById("closeButton");
+
+// Add a click event listener to the "close" button
+closeButton.addEventListener("click", () => {
+  // Add the shrink-move-effect class to the body
+  document.body.classList.add("shrink-move-effect");
+
+  // Start loading the new page in the background
+  const newPage = new Image();
+  newPage.src = "project.html"; // Replace with your actual new page URL
+
+  // Wait for the animation to complete before navigating to the new page
+  setTimeout(() => {
+    // Navigate to the new page
+    window.location.href = "project.html"; // Replace with your actual new page URL
+  }, 1000); // Adjust the delay as needed to match the transition duration
+});
+
+
+
+
+
+    </script>
+  </body>
+</html>

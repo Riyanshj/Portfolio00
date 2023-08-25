@@ -1,301 +1,551 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <meta name="author" content="harrnish">
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Google tag (gtag.js) -->
+        <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
 
-      <title>Project</title>
+        <!-- This site is optimized with the Yoast SEO plugin v20.7 - https://yoast.com/wordpress/plugins/seo/ -->
+        <title>PROJECTS</title>
 
-      <!-- stylesheet -->
-      <link rel="stylesheet" href="style.css">
-      <link rel="stylesheet" href="style.scss">
-      <!-- bootstrap cdns -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-      <!-- google fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
-
-      <!-- ionicons cdn -->
-      <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
-
-
-      <!-- for on scroll animations -->
-      <link rel="stylesheet" href="animate.css">
-      <script src="wow.min.js"></script>
-
-</head>
-<body>
-      <div id="trailer">
-            <i id="trailer-icon" class="fa-solid fa-location-arrow fa-bounce"></i>
-          </div>
-          
-          <div class="brand">
-            <span id="brand">
-                  <a href="index.html" class="hover-this">RIYANSH JAIN</a>
-      </div>
  
-      
-            <!--------------- navbar starts here --------------->
-            <nav>
+    </head>
+    <body >
+      <nav class="navbarr">
+        <div class="navbarr-left">RIYANSH</div>
+        <div class="navbarr-center">
+            <a href="index.html" class="navbarr-link" style="color: white;">Index</a>
+            <a href="about.html" class="navbarr-link" style="color: white;">About</a>
+            <a href="project.html" class="navbarr-link" style="color: white;">○Work</a>
+            <a href="contact.html" class="navbarr-link" style="color: white;">Contact</a>
+        </div>
+        <div class="navbarr-right"><a href="mailto:riyanshj83@gmail.com" style="color: white; font-weight: 400;">SAYHI:[RIYANSHJ83@GMAIL.COM]    </nav>
+    <style>
+
+.navbarr {
+    font-family: "Clash Display";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Adjust the z-index as needed */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    position: fixed; /* Set the position to fixed */
+    top: 0; /* Place the navigation bar at the top */
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0);
+    mix-blend-mode:difference ;
+    font-size: 14px;
+  }
+
+.navbarr-left,
+.navbarr-right {
+font-weight: bold;
+
+}
+
+.navbarr-center {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.navbarr-link {
+color: rgb(0, 0, 0);
+text-decoration: none;
+margin: 0 15px;
+
+transition: ease 2s;
+
+}
+
+.navbarr-link:hover {
+animation: blink 0.3s infinite !important;
+
+}
+
+
+
+
+@keyframes blink {
+0%, 10% {
+    opacity: 1;
+}
+50% {
+    opacity: 0;
+}
+}
+
+    </style>
+          
+        
+           
+                <main>
+                </div>
+                      
+                      <style>
+                        
+                        body {
+                          margin: 0;
+                          padding: 0;
+                          display: flex;
+                          flex-direction: column;
+                          height: 100vh;
+                          font-family:" Clash Display";
+                          
+                        }
+                        .work-section {
+                          flex: 1;
+                          padding: 20px;
+                          background-color: #ffffff;
+                        }
+                        .block-container {
+                          display: flex;
+                          flex-direction: column;
+                          padding: 20px;
+                          background-color: #39ff14;
+                          border-top: 1px solid #ccc;
+                          flex: 1;
+                          max-width: 100%;
+                        }
+                        @media (min-width: 750px) and (max-width:1024px){
+    .navbarr-right{
+        visibility: hidden;
+    }
+    .navbarr{
+        font-size: 12px;
+    }
+
+
+
+}
+                        .block {
+                          position: relative;
+                          flex: 1;
+                          background-color: #ffffff; /* Default gray color */
+                          transition: all 0.3s ease;
+                          cursor: pointer;
+                          margin-bottom: -10px; /* Overlap by 10% of height */
+                          border: 2px solid #000000; /* Black border */
+                          border-radius: 10px; /* Rounded corners */
+                          display: flex;
+                          flex-direction: column; /* Set the direction to column */
+                          align-items: flex-start; /* Align text to the left */
+                          justify-content: center;
+                          overflow: hidden;
+                          padding-left: 15px; /* Add left padding for better spacing */
+                        }
+                        .block .content {
+                          font-size: 1rem; /* Default font size */
+                          padding: 10px;
+                          color: rgb(0, 0, 0); /* Text color */
+                        }
+                        .block:hover {
+                          flex: 2;
+                          background-color: #39ff14; /* Neon color on hover */
+                          border-color: #39ff14; /* Neon color for outline on hover */
+                        }
+                        .col .col-1 .play{
+                        top: 0%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 50px;
+                            height: 50px;
+                            background-color: #ff6200; /* Button color */
+                            border-radius: 50%; /* Make it circular */
+                            cursor: pointer;
+                            font-size: 24px;
+                            color: rgb(0, 0, 0);
+                          }
+                          @media (max-width: 768px){
+                            .work-section h1{
+                              font-size: 48px!important;
+                            }
+                            .content a{
+                              font-size: 36px!important;
+                      
+                            }
+                            .content{
+                              font-size: 36px!important;
+                            }
+                          }
+                          @media (max-width: 992px){
+    .navbarr-right{
+        visibility: hidden;
+    }
+    .navbarr{
+        font-size: 6px;
+    }
+    
+ }
+
+
+
+                      
+                      
+                      
+                      
+                      
+                      </style>
+                    <div class="work-section">
+                          <h1 style="font-size: 64px; color: #000!important;">MY PROJECTS<sup><a href="play.html"><button style="border-width: 2px; border-radius: 10px; border-color: #000000; cursor: pointer; background-color: #39ff14; font-size: 20px; ">Newspaper view</button></a></sup></h1> 
+                          <p style="font-size: 24px;"> Welcome to my work section! Please enjoy browsing through my portfolio and let's create something amazing together!
+                            
+                          </p>
+                        </div>
+                        
+                        <div class="block-container">
+                      
+                          <div class="block">
+                            <div class="content" style="font-size: 64px;" id="hoverable"><a href="social.html" style="text-decoration: none ; color:#000000">SOCIAL MEDIA UI</a>
+                          
+                          </div>
+                           
+                          </div>
+                          <div class="block">
+                            <div class="content" style="font-size: 64px;"><a href="racing.html" style="text-decoration: none ; color:#000000">RACING GAME</a></div>
+                          </div>
+                          <div class="block">
+                            <div class="content" style="font-size: 64px;"><a href="stackgame.html" style="text-decoration: none ; color:#000000">STACK GAME</a></div>
+                          </div>
+                          <div class="block">
+                            <div class="content" style="font-size: 64px;"><a href="ui.html" style="text-decoration: none ; color:#000000">NETFLIX REDESIGNED</a></div>
+                          </div>
+                          <div class="block">
+                            <div class="content" style="font-size: 64px;">MORE SOON</div>
+                          </div>
+                        </div>
+                        <footer>
+                            <div class="contacts"><h1>Contact<br >-Us</h1></div>
+                            <div>
+                              <a href="#">Home</a>
+                              <br>
+                              <a href="#">About Us</a>
+                              <br>
+                            
+                            </div>
+                            
+                          </footer>
+                        <script>
+                          const blocks = document.querySelectorAll('.block');
+                          
+                          blocks.forEach(block => {
+                            block.addEventListener('mouseenter', () => {
+                              const neonColor = getRandomNeonColor();
+                              gsap.to(block, { 
+                                backgroundColor: neonColor,
+                                borderColor: neonColor,
+                                height: '200px', // Expand more (adjust as needed)
+                                ease: 'power3.out' // Use a smooth easing
+                              });
+                            });
+                            
+                            block.addEventListener('mouseleave', () => {
+                              gsap.to(block, { 
+                                backgroundColor: '#ffffff', // Reset to default gray
+                                borderColor: '#000000', // Reset border color to black
+                                height: '100px', // Reset height
+                                ease: 'power3.out' // Use a smooth easing
+                              });
+                            });
+                          });
+                          
+                          function getRandomNeonColor() {
+                            const letters = '0123456789ABCDEF';
+                            let color = '#';
+                            for (let i = 0; i < 6; i++) {
+                              color += letters[Math.floor(Math.random() * 16)];
+                            }
+                            return color;
+                          }
+                          gsap.from('.work-section', {
+                            opacity: 0,
+                            y: -20,
+                            duration: 1,
+                            delay: 0.5,
+                            ease: 'power3.out'
+                          });
+                          
+                          gsap.from('.block', {
+                            opacity: 0,
+                            y: 20,
+                            duration: 1,
+                            stagger: 0.2,
+                            ease: 'power3.out',
+                            delay: 1
+                          });
+                          
+                          const splitText = new SplitText("#work-heading", { type: "chars" });
+                          gsap.from(splitText.chars, {
+                            opacity: 0,
+                            y: -20,
+                            duration: 1,
+                            stagger: 0.05,
+                            ease: 'power3.out',
+                            delay: 1.5
+                          });
+                        </script>
+                      
+                    </body>
+                    <style>
+                        .abt{
+                            width: 50%;
+                            float: right;
+                            font-family: "Clash Display";
+                            font-weight: 100;
+                            
+                        }
+                        .abt h4{
+                            font-size: 20px;
+                            display: block;
+                            text-transform: uppercase;
+                            cursor:default;
+                            
+                        }
+                        body {
+    margin: 0;
+    font-family: "Clash Display";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff
+}
+
+
+
+
+                     
+                  /* ... existing styles ... */
+                  
+                  /* Add these styles to enlarge the smile and show "Hello" on hover */
+    
+                  .contact a{
+                    border: 2px solid black;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    border-radius: 20px;
+                    transition: ease-in-out .5s;
+                    font-weight: 500;
+                    cursor: pointer;
+                    
+                    
+                  }
+                  .key {
+                    font-size: 15vw;
+                    display: inline-block;
+                    letter-spacing: -1vw;
+                    transition: transform 0.2s;
+                    }
+                    @keyframes pressDown1 {
+                    30%,
+                    40%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    35% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+                    @keyframes pressDown2 {
+                    70%,
+                    80%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    75% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+                    @keyframes pressDown3 {
+                    30%,
+                    40%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    35% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+                    @keyframes pressDown4 {
+                    40%,
+                    50%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    45% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+                    @keyframes pressDown5 {
+                    20%,
+                    30%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    25% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+                    @keyframes pressDown6 {
+                    60%,
+                    70%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    65% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+                    @keyframes pressDown7 {
+                    10%,
+                    20%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    15% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+                    @keyframes pressDown8 {
+                    35%,
+                    45%,
+                    100% {
+                        transform: translateY(0);
+                    }
+                    40% {
+                        transform: translateY(10px);
+                    }
+                    }
+
+
+
+                    .key:nth-child(1) {
+                    animation: pressDown1 2s infinite;
+                    }
+
+                    .key:nth-child(2) {
+                    animation: pressDown2 3s infinite;
+                    }
+
+                    .key:nth-child(3) {
+                    animation: pressDown3 4s infinite;
+                    }
+
+                    .key:nth-child(4) {
+                    animation: pressDown4 2.5s infinite;
+                    }
+
+                    .key:nth-child(5) {
+                    animation: pressDown5 2.5s infinite;
+                    }
+
+                    .key:nth-child(6) {
+                    animation: pressDown6 3.5s infinite;
+                    }
+
+                    .key:nth-child(7) {
+                    animation: pressDown7 2.2s infinite;
+                    }
+
+                    .key:nth-child(8) {
+                    animation: pressDown8 3.2s infinite;
+                    }
+
+
+                  .contact a:hover{
+                    color: #ffffff!important;
+                    background: #000;
+                  }
+
+                  
+                  
+                  .linee {
                  
+                    display: flex;
+                    justify-content: space-between;
+                    
+                  }
+                  @media (max-width: 992px){
+                    .wordd{
+                      font-size: 30px!important;
+                    }
+                    .svg{
+                      height: 20px!important;
+                    }
+                  
+                  }
+                  .wordd {
+                    color: rgb(26, 26, 26);
+                    font-size: 200px;
+                    text-transform: uppercase;
+                    font-family: "Clash Display";
+                    margin: 0rem;
+                    text-transform: uppercase;
+                    transition: opacity 250ms ease;
+                    font-weight: 700;
+                    font-stretch: extra-expanded;
+                    transition: all ease 0.5s;
+                    cursor: default;
+                    
+                    
+                    
+                  }
 
-                  <ul id="menu">
-                        <li><a href="index.html">home<span>.</span></a></li>
-                        <li><a href="work.html">work<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html">contact<span>.</span></a></li>
-                  </ul>
+                  
+                  
+                  a {
+                    text-decoration: none;
+                  }
+                  
+                  .textt{
+                  text-align: center;
+                    margin-top: 20px;
+                  }
+                  
+                  #textt:has(.fancy:hover) .wordd:not(.fancy:hover) {
+                    opacity: 0.2;
+                  }
+                  
 
-                  <div id="toggle">
-                        <div class="span">menu</div>
-                  </div>
-
-            </nav>
-
-            <div id="resize">
-                  <div class="close-btn">X</div>
-
-                  <ul id="menu">
-                        <li><a href="index.html">home<span>.</span></a></li>
-                        <li><a href="work.html">work<span>.</span></a></li>
-                        <li><a href="about.html">about me<span>.</span></a></li>
-                        <li><a href="contact.html">contact<span>.</span></a></li>
-                  </ul>
+                  /* -- YouTube Link Styles -- */
+                  
+                    </style>
             </div>
+            
+        </div>
+        <div id="canvas-wrapper"></div>
+        
+<script>
+      
+    const arrow = document.getElementById('arrow');
+    gsap.set(arrow, { xPercent: -50, yPercent: -50 });
 
-            <!--------------- navbar ends here --------------->
-
-            <div class="whitespace"></div>
-
-            <!--------------- hero section starts here --------------->
-            <div class="container">
-                  <div class="hero-content">
-                        <br><br>
-                        <div class="row">
-                              <div class="col-lg-12">
-                                    <br>
-
-                                    <h1 class="wow fadeInUp" data-wow-delay="1s">Project Name</h1><br><br>
-
-                                    <div class="row">
-                                          <div class="col-lg-4">
-                                                <p class="wow fadeInUp" data-wow-delay="1.2s">service :</p>
-                                                <h6 class="wow fadeInUp" data-wow-delay="1.3s">Web Development</h6>
-                                          </div>
-
-                                          <div class="col-lg-4">
-                                                <p class="wow fadeInUp" data-wow-delay="1.4s">started :</p>
-                                                <h6 class="wow fadeInUp" data-wow-delay="1.5s">8 May 2019</h6>
-                                          </div>
-
-                                          <div class="col-lg-4">
-                                                <p class="wow fadeInUp" data-wow-delay="1.6s">completed :</p>
-                                                <h6 class="wow fadeInUp" data-wow-delay="1.7s">15 May 2019</h6>
-                                          </div>
-                                    </div>
-                                    <br>
-                                    <p class="wow fadeInUp" data-wow-delay="1.8s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum officia molestiae laboriosam, rem reprehenderit. Laboriosam quae alias, iure nesciunt dolorum. Eaque, magni, enim. Dolores, provident voluptas dicta commodi vel magni nesciunt sed maiores aperiam illo officiis voluptate at quod, praesentium excepturi enim.</p>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-            <!--------------- hero section ends here --------------->
-
-
-            <!--------------- project image section starts here --------------->
-
-            <div class="project-img">
-                  <div class="container">
-                        <br><br>
-                        <div class="row">
-                              <div class="col-md-8">
-                                    <div class="project image wow fadeInUp" data-wow-delay="0.8s"></div>
-                              </div>
-                              <div class="col-md-4">
-                                    <div class="project image wow fadeInUp" data-wow-delay="0.8s"></div>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-
-            <!--------------- project image section ends here --------------->
-
-            <br><br>
-
-            <!--------------- project nav starts here --------------->
-
-            <div class="project-nav">
-                  <div class="container">
-                        <div class="row">
-                              <div class="col-lg-6 prev">
-                                    <p><ion-icon name="arrow-back"></ion-icon>previous</p>
-                              </div>
-                              <div class="col-lg-6 next">
-                                    <p>next<ion-icon name="arrow-forward"></ion-icon></p>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-
-            <!--------------- project nav starts here --------------->
-
-            <div class="whitespace"></div>
-
-
-            <!--------------- footer starts here --------------->
-            <div class="footer">
-                  <div class="container">
-                        <br><br>
-
-                        <div class="collab">
-                              <div class="row">
-                                    <div class="col-lg-12">
-                                          <p class="wow fadeInUp">Got an interesting project? I can help you.</p>
-                                    </div>
-                              </div>
-                        </div>
-
-                        <br>
-
-                        <div class="hr">
-                              <div class="row"></div>
-                        </div>
-
-                        <br><br>
-
-                        <div class="info">
-                              <div class="row">
-                                    <div class="col-lg-4" id="personal">
-                                          <p class="wow fadeInUp">connect with me</p>
-                                          <div class="interactable" data-type="link">
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/jriyansh09/" style='color:rgb(57, 57, 57) ;'>riyansh09</a></h4>
-                                    </div>
-                                          <br><br>
-                                    </div>
-                                    
-                                    <div class="col-lg-4" id="media">
-                                          <p class="wow fadeInUp" data-wow-delay="0s">follow me</p>
-
-                                          <ul>
-                                                <div class="interactable" data-type="link">
-                                                <li id="fb" class="wow fadeInUp" data-wow-delay="0.4s" ><a href="https://www.linkedin.com/in/riyansh-jain-890275228" style="text-decoration: none; color: rgb(57, 57, 57) ;">Li</a></li>
-                                                <li id="ig" class="wow fadeInUp" data-wow-delay="0.6s"><a href="https://instagram.com/jriyansh09?igshid=ZDdkNTZiNTM=" style="text-decoration: none; color: rgb(57, 57, 57) ;">IG</a></li>
-                                                <li id="tw" class="wow fadeInUp" data-wow-delay="0.8s"><a href="https://www.behance.net/riyujain1" style="text-decoration: none; color: rgb(57, 57, 57) ;">Be</a></li>
-                                          </div>
-                                          </ul>
-
-                                          <br><br>
-                                    </div>
-
-                                    <div class="col-lg-4" id="address">
-
-                                          <p class="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                          <div class="interactable" data-type="link">
-                                          <h4 class="wow fadeInUp" data-wow-delay="0.2s"><a href="mailto:riyanshj83@gmail.com" style='color:rgb(57, 57, 57) ;'>riyanshj83@gmail.com</h4></a>
-                                    </div>
-                                          <br><br>
-                                    </div>
-                              </div>
-                        </div>
-                  </div>
-                   
-            </div>
-            <!--------------- footer ends here --------------->
-
-            <br><br><br><br>
-            <div class="cursor"></div> 
-      </div>
-
-      <!-- greensock cdn -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-
-      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-      <script type="text/javascript">
-
-      // navigation starts here
-      $("#toggle").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      $("#resize ul li a").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      $(".close-btn").click(function() {
-            $(this).toggleClass('on');
-            $("#resize").toggleClass("active");
-      });
-
-      // navigation ends here
-
-      // nav animation
-
-      TweenMax.from("#brand", 1, {
-            delay: 0.4,
-            y: 10,
-            opacity: 0,
-            ease: Expo.easeInOut
-      })
-
-      TweenMax.staggerFrom("#menu li a", 1, {
-            delay: 0.4,
-            opacity: 0,
-            ease: Expo.easeInOut
-      }, 0.1);
-
-      // nav animation ends
-
-
-
-      new WOW().init();
-
-
-      </script>
-     <script>
-      const trailer = document.getElementById("trailer");
-
-const animateTrailer = (e, interacting) => {
-const x = e.clientX - trailer.offsetWidth / 2,
-  y = e.clientY - trailer.offsetHeight / 2;
-
-const keyframes = {
-transform: `translate(${x}px, ${y}px) scale(${interacting ? 8 : 1})`
-}
-
-trailer.animate(keyframes, { 
-duration: 800, 
-fill: "forwards" 
-});
-}
-
-const getTrailerClass = type => {
-switch(type) {
-case "video":
-return "fa-solid fa-play";
-default:
-return "fa-solid fa-location-arrow fa-bounce"; 
-}
-}
-
-window.onmousemove = e => {
-const interactable = e.target.closest(".interactable"),
-  interacting = interactable !== null;
-
-const icon = document.getElementById("trailer-icon");
-
-animateTrailer(e, interacting);
-
-trailer.dataset.type = interacting ? interactable.dataset.type : "";
-
-if(interacting) {
-icon.className = getTrailerClass(interactable.dataset.type);
-}
-}
+    document.addEventListener('mousemove', (event) => {
+      const { clientX, clientY } = event;
+      const xPercent = (clientX / window.innerWidth) * 100;
+      const yPercent = (clientY / window.innerHeight) * 100;
+      gsap.to(arrow, { duration: 0.3, xPercent, yPercent });
+    });
+ 
 </script>
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    </body>
 </html>
+
+
+
