@@ -1,0 +1,67 @@
+.navbarr {
+  font-family: "Clash Display";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Adjust the z-index as needed */
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  position: fixed; /* Set the position to fixed */
+  top: 0; /* Place the navigation bar at the top */
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.navbarr-left,
+.navbarr-right {
+  font-weight:500;
+  
+  
+}
+
+.navbarr-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarr-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin: 0 15px;
+  
+  transition: ease 2s;
+
+}
+
+.navbarr-link:hover {
+  animation: blink 0.3s infinite !important;
+
+}
+@media (max-width: 750px){
+  .navbarr-right{
+      visibility: hidden;
+  }
+  .navbarr{
+      font-size: 10px;
+  }
+}
+@media (min-width: 750px) and (max-width:1024px){
+  .navbarr-right{
+      visibility: hidden;
+  }
+  .navbarr{
+      font-size: 12px;
+  }
+}
+@keyframes blink {
+  0%, 10% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
