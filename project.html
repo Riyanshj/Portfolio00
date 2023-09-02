@@ -1,19 +1,75 @@
-<!-- ... (previous code) ... -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>WORK</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="nav.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="nav.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+  <nav class="navbarr">
+    <div class="navbarr-left">RIYANSH</div>
+    <div class="navbarr-center">
+        <div class="navbarr-link-wrapper"><a href="index.html" class="navbarr-link">○Index</a></div>
+        <div class="navbarr-link-wrapper"><a href="about.html" class="navbarr-link">About</a></div>
+        <div class="navbarr-link-wrapper"><a href="project.html" class="navbarr-link">Work</a></div>
+        <div class="navbarr-link-wrapper"><a href="contact.html" class="navbarr-link">Contact</a></div>
+    </div>
+    <div class="navbarr-right"><a href="mailto:riyanshj83@gmail.com" style="color: rgb(0, 0, 0); font-weight: 400; text-decoration: none;">HELLO-[RIYANSHJ83@GMAIL.COM]</a></div>
+</nav>
+
+<div class="work"><br>
+  <br><h1>WORK<sup>(5)</sup></h1>
+  <span>
+      <a  id="gridLink" class="list">GRID</a>/
+      <a  id="listLink" class="list">LIST</a>
+  </span>
+</div>
+<br>
+<br>
 
 
-  <style>
-    ::-webkit-scrollbar {
+<div class="list-page" id="gridSection">
+ 
+      <div class="image-grid vertical-align">
+        <div class="image-container">
+            <img src="images/social.png" alt="Image 1">
+            <div class="overlay-text">DESIGNING - UI - FIGMA<BR><span class="title-text">APP UI</span></div>
+        </div>
+        <div class="image-container">
+            <img src="images/game.png" alt="Image 2">
+            <div class="overlay-text">WEB GAME - HTML - CSS<BR>
+              <span class="title-text">Web Stack Game</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="image-grid vertical-align">
+        <div class="image-container">
+            <img src="images/musik.png" alt="Image 1">
+            <div class="overlay-text">WEB DESIGNING - HTML - CSS<BR>
+              <span class="title-text">3D WEB DESIGN</span>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="images/toutube.png" alt="Image 2">
+            <div class="overlay-text">DESIGNING - UI - FIGMA
+              <br><span class="title-text">NETFLIX REDESIGNED</span>
+            </div>
+        </div>
+      </div>
+
+
+</div>
+<style>
+   ::-webkit-scrollbar {
     display: none;
 }
     body{
-        
+        background-color: #c7c7c7;
         font-family: "Clash Display";
     }
         .image-grid {
@@ -122,63 +178,73 @@
           font-size: 20px;
           
         }
-  </style>
-</head>
-<body>
-  <nav class="navbarr">
-    <div class="navbarr-left">RIYANSH</div>
-    <div class="navbarr-center">
-        <div class="navbarr-link-wrapper"><a href="index.html" class="navbarr-link">Index</a></div>
-        <div class="navbarr-link-wrapper"><a href="about.html" class="navbarr-link">About</a></div>
-        <div class="navbarr-link-wrapper"><a href="project.html" class="navbarr-link">○Work</a></div>
-        <div class="navbarr-link-wrapper"><a href="contact.html" class="navbarr-link">Contact</a></div>
-    </div>
-    <div class="navbarr-right"><a href="mailto:riyanshj83@gmail.com" style="color: rgb(0, 0, 0); text-decoration: none;">HELLO-[RIYANSHJ83@GMAIL.COM]</a></div>
-</nav>
+        @media(max-width:750px){
+          .work h1 , sup{
+          font-size: 20px;
+          
+        }
+        .work sup{
+          font-size: 20px;
+          
+        }
+        .list{
+          font-size: 10px;
+          
+          
+        }
+        .work span{
+        
+        padding-left: 70vw;
+   
+        }
+        .image-container {
+            border-top: 1px black solid;
+            border-bottom:1px black solid ;
+            flex: 1; /* Each image container takes up half of the row */
+            height: 20vh; /* Set the height to 50% of the viewport height */
+            padding: 20px 10px;
+          
+        }
 
-<div class="work"><br>
-  <br><h1>WORK<sup>(5)</sup></h1>
-  <span>
-      <a  id="gridLink" class="list">GRID</a>/
-      <a  id="listLink" class="list">LIST</a>
-  </span>
-</div>
-<br>
-<br>
+        /* Style for the image inside the container */
+        .image-container img {
+            width: 100%; /* Make the image fill its container */
+            height: 15vh;
+            display: none; /* Hide the image by default */
+            overflow: hidden;
+            position: absolute;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+        }
 
+        /* Style for the overlay text */
+        .overlay-text {
+            font-size: 8px;
+            left: 15vw;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .title-text{
+          font-size: 10px;
+          
+        }
 
-<div class="list-page" id="gridSection">
- 
-      <div class="image-grid vertical-align">
-        <div class="image-container">
-            <img src="images/social.png" alt="Image 1">
-            <div class="overlay-text">DESIGNING - UI - FIGMA<BR><span class="title-text">APP UI</span></div>
-        </div>
-        <div class="image-container">
-            <img src="images/game.png" alt="Image 2">
-            <div class="overlay-text">WEB GAME - HTML - CSS<BR>
-              <span class="title-text">Web Stack Game</span>
-            </div>
-        </div>
-      </div>
-
-      <div class="image-grid vertical-align">
-        <div class="image-container">
-            <img src="images/musik.png" alt="Image 1">
-            <div class="overlay-text">WEB DESIGNING - HTML - CSS<BR>
-              <span class="title-text">3D WEB DESIGN</span>
-            </div>
-        </div>
-        <div class="image-container">
-            <img src="images/toutube.png" alt="Image 2">
-            <div class="overlay-text">DESIGNING - UI - FIGMA
-              <br><span class="title-text">NETFLIX REDESIGNED</span>
-            </div>
-        </div>
-      </div>
-
-
-</div>
+        }
+       
+</style>
 <br>
 
 <br>
@@ -257,22 +323,9 @@
           
         </ul>
       </div>
-    </body>
-    <style>@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-      :root {
-        --white-color: #101010;
-        --black-color: #f7f7f7;
-      }
-      
-      * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-      }
-      html {
-        overflow-x: hidden;
-      }
+   
+    <style>
+
       ul,
       ol {
         list-style: none;
@@ -285,10 +338,7 @@
         height: auto;
       }
       
-      a {
-        transition: all 0.5s;
-        text-decoration: none;
-      }
+
       h1 {
         font-size: 100px;
         line-height: 120px;
@@ -299,28 +349,7 @@
         text-transform: capitalize;
         font-family: "Roboto", sans-serif;
       }
-      .video-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -2;
-      }
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .video-container::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(250, 250, 250, 0.9);
-      }
+
       
       .project-list {
         margin: 60px 0px 0px;
@@ -436,7 +465,7 @@
         }
       }
       
-      @media (max-width: 767px) {
+      @media (max-width: 750px) {
         h1 {
           font-size: 50px;
           line-height: 70px;
